@@ -1,132 +1,172 @@
-*HTML*
-```
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explora Tours</title>
-    <link rel="stylesheet" href="estilos.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CÓDIGO ALFA VIP — Excelencia Estratégica</title>
+  
+  <style>
+    :root {
+      --bg: #030305;
+      --gold: #C5A059; /* Oro champaña mate */
+      --gold-bright: #E8D2A6;
+      --white: #FFFFFF;
+      --glass: rgba(255, 255, 255, 0.02);
+      --border: rgba(197, 160, 89, 0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Fondo con iluminación dinámica */
+    .glow-bg {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 50% -20%, rgba(197, 160, 89, 0.08), transparent 50%);
+      z-index: -1;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+
+    /* Header de Élite */
+    header { text-align: center; margin-bottom: 90px; }
+    .logo-main {
+      width: 120px; height: auto; margin-bottom: 25px;
+      filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.2));
+    }
+    .brand-title {
+      font-size: 14px; font-weight: 400; letter-spacing: 8px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+    }
+
+    /* Hero Section */
+    .hero { text-align: center; margin-bottom: 100px; }
+    h1 {
+      font-size: clamp(40px, 8vw, 72px); font-weight: 800; line-height: 1;
+      letter-spacing: -3px; margin-bottom: 20px;
+    }
+    .gold-gradient {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--gold) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      font-size: clamp(18px, 4vw, 22px); color: rgba(255,255,255,0.5);
+      max-width: 600px; margin: 0 auto; font-weight: 300;
+    }
+
+    /* Card Central (Glassmorphism) */
+    .premium-card {
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      overflow: hidden;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+    }
+
+    .visual-side {
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.05) 0%, transparent 100%);
+      padding: 60px; display: flex; flex-direction: column; justify-content: center; align-items: center;
+      border-right: 1px solid var(--border);
+    }
+    .guide-mockup {
+      width: 100%; max-width: 280px; border-radius: 12px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      transition: transform 0.5s ease;
+    }
+    .premium-card:hover .guide-mockup { transform: translateY(-10px) rotate(-2deg); }
+
+    .form-side { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+    h3 { font-size: 24px; margin-bottom: 30px; letter-spacing: -0.5px; }
+
+    /* Inputs de Lujo */
+    .input-field {
+      width: 100%; padding: 20px; margin-bottom: 20px;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px; color: white; font-size: 16px; transition: 0.3s;
+    }
+    .input-field:focus { border-color: var(--gold); background: rgba(197, 160, 89, 0.05); outline: none; }
+
+    /* Botón de Impacto */
+    .cta-button {
+      width: 100%; padding: 22px; border-radius: 14px; border: none;
+      background: linear-gradient(135deg, var(--gold) 0%, #8A6D3B 100%);
+      color: #000; font-weight: 800; font-size: 16px; text-transform: uppercase;
+      letter-spacing: 2px; cursor: pointer; transition: 0.4s;
+      box-shadow: 0 15px 35px rgba(197, 160, 89, 0.2);
+    }
+    .cta-button:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(197, 160, 89, 0.4); filter: brightness(1.1); }
+
+    footer {
+      margin-top: 100px; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center; color: rgba(255,255,255,0.3); font-size: 13px;
+    }
+    .footer-email { color: var(--gold); text-decoration: none; display: block; margin-top: 15px; font-weight: 500; }
+
+    @media (max-width: 850px) {
+      .premium-card { grid-template-columns: 1fr; }
+      .visual-side { border-right: none; border-bottom: 1px solid var(--border); padding: 40px; }
+      .form-side { padding: 40px; }
+      h1 { font-size: 48px; }
+    }
+  </style>
 </head>
 <body>
+  <div class="glow-bg"></div>
+
+  <div class="container">
     <header>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#destinos">Destinos</a></li>
-                <li><a href="#tours">Tours</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+      <img src="https://i.ibb.co/image-png-4e57df51-d15b-43b3-8d19-87a051725aa2.png" alt="CÓDIGO ALFA" class="logo-main">
+      <div class="brand-title">Albert Sierra</div>
     </header>
-    
-    <section id="inicio">
-        <h1>Explora Tours</h1>
-        <p>Descubre nuevos destinos con nosotros</p>
-        <img src="imagen-fondo.jpg" alt="Imagen de fondo">
-    </section>
-    
-    <section id="destinos">
-        <h2>Destinos Populares</h2>
-        <div class="destino">
-            <h3>París</h3>
-            <p>La ciudad del amor y la luz</p>
-            <img src="paris.jpg" alt="Imagen de París">
+
+    <main>
+      <section class="hero">
+        <h1 class="gold-gradient">CÓDIGO ALFA VIP</h1>
+        <p class="subtitle">La arquitectura de dominio mental y disciplina estratégica reservada para el 1%.</p>
+      </section>
+
+      <div class="premium-card">
+        <div class="visual-side">
+          <img src="https://i.ibb.co/image-png-32786f6b-e769-44a7-8c6f-b17eedd2677e.png" alt="Guía VIP" class="guide-mockup">
+          <div style="margin-top: 30px; text-align: center;">
+            <span style="color: var(--gold); font-size: 12px; letter-spacing: 3px; font-weight: 700;">ACCESO INMEDIATO</span>
+            <p style="font-size: 11px; opacity: 0.4; margin-top: 5px;">FORMATO DIGITAL · ENCRIPTADO</p>
+          </div>
         </div>
-        <div class="destino">
-            <h3>Roma</h3>
-            <p>La ciudad eterna</p>
-            <img src="roma.jpg" alt="Imagen de Roma">
+
+        <div class="form-side">
+          <h3>Inicia tu transformación</h3>
+          <form action="#" method="POST">
+            <input type="text" class="input-field" placeholder="Nombre completo" required>
+            <input type="email" class="input-field" placeholder="Email corporativo / privado" required>
+            <button type="submit" class="cta-button">Reclamar Acceso VIP</button>
+            <p style="font-size: 11px; opacity: 0.3; text-align: center; margin-top: 20px;">
+              🛡️ Tu privacidad es nuestro estándar de oro.
+            </p>
+          </form>
         </div>
-        <div class="destino">
-            <h3>Nueva York</h3>
-            <p>La ciudad que nunca duerme</p>
-            <img src="new-york.jpg" alt="Imagen de Nueva York">
-        </div>
-    </section>
-    
-    <section id="tours">
-        <h2>Tours Recomendados</h2>
-        <div class="tour">
-            <h3>Tour por París</h3>
-            <p>Descubre los secretos de la ciudad con un guía experto</p>
-            <p>3 días, 2 noches. Desde $800</p>
-            <button>Reservar</button>
-        </div>
-        <div class="tour">
-            <h3>Tour por Roma</h3>
-            <p>Explora la historia y la cultura de la ciudad eterna</p>
-            <p>4 días, 3 noches. Desde $1,000</p>
-            <button>Reservar</button>
-        </div>
-    </section>
-    
-    <footer id="contacto">
-        <h2>Contacto</h2>
-        <p>¿Estás listo para planificar tu próximo viaje? Contacta con nosotros para obtener más información y reservar tus tours.</p>
-        <p>Teléfono: +1 555 123 4567</p>
-        <p>Correo electrónico: <a href="mailto:info@exploratours.com">info@exploratours.com</a></p>
-        <p>&copy; 2023 Explora Tours. Todos los derechos reservados.</p>
+      </div>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> CÓDIGO ALFA · ARQUITECTURA DE PODER</p>
+      <a href="mailto:codigo.alfa2.3@gmail.com" class="footer-email">codigo.alfa2.3@gmail.com</a>
     </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-```
-
-CSS (en archivo estilos.css)
-```
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-header nav a {
-    color: #fff;
-    text-decoration: none;
-}
-
-#inicio {
-    background-image: url('imagen-fondo.jpg');
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-}
-
-#destinos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.destino {
-    margin: 20px;
-    width: calc(33.33% - 20px);
-    background-color: #f7f7f7;
-    padding: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.destino img {
-    w
