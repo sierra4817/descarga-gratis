@@ -30,7 +30,7 @@
 
     /* Cabecera con Logo */
     header { text-align: center; margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
-    .logo-img { max-width: 100px; height: auto; border-radius: 50%; border: 2px solid var(--gold); padding: 5px; background: rgba(255,255,255,0.02); }
+    .logo-img { max-width: 80px; height: auto; border-radius: 50%; border: 2px solid var(--gold); padding: 5px; background: rgba(255,255,255,0.02); }
     .logo-text { font-weight: 900; letter-spacing: 2px; color: var(--gold); font-size: 22px; text-transform: uppercase; }
 
     /* Sección Principal */
@@ -39,7 +39,7 @@
     h1 span { color: var(--gold); }
     .subtitle { color: var(--muted); font-size: 19px; margin-bottom: 30px; }
 
-    /* Caja de descarga */
+    /* Caja de descarga (Donde ocurre la magia) */
     .download-box {
       background: var(--card);
       border: 1px solid rgba(201, 162, 39, 0.3);
@@ -52,10 +52,10 @@
       align-items: center;
     }
 
-    /* Vista previa de la Guía */
+    /* Imagen o Icono de la Guía */
     .guide-preview {
       background: linear-gradient(135deg, #1a1c24 0%, #05050a 100%);
-      height: 300px;
+      height: 280px;
       border-radius: 12px;
       border: 1px solid var(--gold);
       display: flex;
@@ -63,8 +63,9 @@
       justify-content: center;
       align-items: center;
       box-shadow: 0 10px 30px rgba(201,162,39,0.1);
+      position: relative;
     }
-    .guide-logo-inner { max-width: 80px; margin-bottom: 20px; border-radius: 50%; }
+    .guide-logo-inner { max-width: 60px; margin-bottom: 15px; }
 
     /* Formulario */
     form { display: grid; gap: 15px; }
@@ -75,7 +76,6 @@
       background: rgba(255,255,255,0.05);
       color: white;
       font-size: 16px;
-      width: 100%;
     }
     input:focus { border-color: var(--gold); outline: none; background: rgba(255,255,255,0.08); }
 
@@ -88,12 +88,12 @@
       font-weight: 800;
       font-size: 16px;
       cursor: pointer;
-      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: 0.3s;
       text-transform: uppercase;
     }
-    .btn:hover { transform: translateY(-2px); filter: brightness(1.1); box-shadow: 0 5px 15px rgba(201, 162, 39, 0.4); }
+    .btn:hover { transform: scale(1.02); filter: brightness(1.1); }
 
-    /* Footer */
+    /* Pie de página */
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -104,11 +104,11 @@
     .contact-email { color: var(--gold); font-weight: bold; margin-top: 10px; display: block; text-decoration: none; }
 
     /* Responsive */
-    @media (max-width: 750px) {
-      .download-box { grid-template-columns: 1fr; padding: 25px; gap: 30px; }
+    @media (max-width: 700px) {
+      .download-box { grid-template-columns: 1fr; padding: 25px; gap: 25px; }
       h1 { font-size: 32px; }
-      .guide-preview { height: 220px; }
-      .logo-img { max-width: 70px; }
+      .guide-preview { height: 200px; }
+      .logo-img { max-width: 60px; }
     }
   </style>
 </head>
@@ -116,30 +116,30 @@
 
   <div class="container">
     <header>
-      <img src="https://i.postimg.cc/mD8mK0z6/image.png" alt="Logo Código Alfa" class="logo-img">
-      <div class="logo-text">CÓDIGO ALFA VIP</div>
+      <img src="https://i.ibb.co/image-png-a1ffba4f-441c-462f-b318-2d79a36ebcb3.png" alt="Logo Código Alfa" class="logo-img">
+      <div class="logo-text">CÓDIGO ALFA</div>
     </header>
 
     <main>
       <div class="hero">
-        <h1>Acceso exclusivo a<br><span>CÓDIGO ALFA VIP</span></h1>
-        <p class="subtitle">Descarga la arquitectura de disciplina inquebrantable para el 1%.</p>
+        <h1>Tu acceso a<br><span>CÓDIGO ALFA VIP</span> está listo</h1>
+        <p class="subtitle">Aprende los pilares de la disciplina inquebrantable hoy mismo.</p>
       </div>
 
       <div class="download-box">
         <div class="guide-preview">
-          <img src="https://i.postimg.cc/mD8mK0z6/image.png" alt="Código Alfa VIP" class="guide-logo-inner">
-          <div style="font-weight: 900; letter-spacing: 1px; color: var(--gold); font-size: 18px;">GUÍA TÁCTICA VIP</div>
-          <div style="font-size: 11px; opacity: 0.6; margin-top: 5px; text-transform: uppercase;">Contenido de Alto Valor</div>
+          <img src="https://i.ibb.co/image-png-a1ffba4f-441c-462f-b318-2d79a36ebcb3.png" alt="Código Alfa VIP" class="guide-logo-inner">
+          <div style="font-weight: 900; letter-spacing: 1px; color: var(--gold);">GUÍA ALFA VIP</div>
+          <div style="font-size: 12px; opacity: 0.6; margin-top: 5px; text-transform: uppercase;">Pdf Digital</div>
         </div>
 
         <div class="form-container">
           <form action="#" method="POST">
-            <input type="text" name="name" placeholder="Tu nombre" required>
-            <input type="email" name="email" placeholder="Tu mejor email" required>
-            <button type="submit" class="btn">Obtener Guía VIP Gratis</button>
-            <p style="font-size: 12px; color: var(--muted); text-align: center; margin-top: 12px;">
-              🛡️ Envío inmediato y seguro.
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Tu mejor correo electrónico" required>
+            <button type="submit" class="btn">Recibir Acceso VIP Ahora</button>
+            <p style="font-size: 12px; color: var(--muted); text-align: center; margin-top: 10px;">
+              Envío instantáneo por email.
             </p>
           </form>
         </div>
@@ -149,7 +149,7 @@
 
   <footer>
     <p>© <span id="year"></span> Albert Sierra · CÓDIGO ALFA</p>
-    <p>Soporte y contacto:</p>
+    <p>¿Tienes dudas? Escríbenos a:</p>
     <a href="mailto:codigo.alfa2.3@gmail.com" class="contact-email">codigo.alfa2.3@gmail.com</a>
   </footer>
 
