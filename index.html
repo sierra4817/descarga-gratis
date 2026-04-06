@@ -6,71 +6,111 @@
     <title>Código Alfa: El Manifiesto del 1%</title>
     <style>
         :root {
-            --primary: #d4af37; /* Dorado para evocar exclusividad y poder */
-            --bg: #0f0f0f; /* Negro profundo para fondo */
-            --text: #e0e0e0; /* Gris claro para legibilidad */
-            --accent: #1a1a1a; /* Gris muy oscuro para bloques secundarios */
+            /* Dorado mejorado con gradiente */
+            --gold-primary: #d4af37;
+            --gold-light: #f1d592;
+            --gold-gradient: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            --bg-dark: #0a0a0a;
+            --text-silver: #e0e0e0;
+            --accent-gray: #1c1c1c;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; margin: 0; }
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-        
-        /* Estilos para el Header con Imagen Integrada */
-        header { text-align: center; padding: 60px 20px; border-bottom: 1px solid var(--accent); }
-        .hero-image { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); margin-bottom: 30px; }
-        h1 { color: var(--primary); font-size: 3rem; text-transform: uppercase; margin-bottom: 10px; margin-top: 0; }
-        .hero-sub { font-size: 1.4rem; font-weight: 300; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
-        
-        .section { padding: 50px 0; border-bottom: 1px solid var(--accent); }
-        h2 { color: var(--primary); border-left: 4px solid var(--primary); padding-left: 15px; margin-top: 0; }
-        
-        .cta-button { display: inline-block; background: var(--primary); color: #000; padding: 18px 45px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.3rem; margin-top: 20px; transition: transform 0.2s, box-shadow 0.2s; text-transform: uppercase; }
-        .cta-button:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
-        
-        .bullets { list-style: none; padding: 0; margin-top: 30px; }
-        .bullets li { margin-bottom: 15px; font-size: 1.1rem; }
-        .bullets li:before { content: "✓ "; color: var(--primary); font-weight: bold; margin-right: 10px; }
-        
-        .bonus-box { border: 2px dashed var(--primary); padding: 25px; background: var(--accent); margin: 30px 0; border-radius: 8px; }
-        .price { font-size: 2.5rem; color: var(--primary); font-weight: bold; margin: 20px 0; }
-        
-        footer { text-align: center; padding: 30px; font-size: 0.9rem; color: #888; }
+
+        body {
+            font-family: 'Georgia', serif; /* Tono más autoritario y de "élite" */
+            background-color: var(--bg-dark);
+            color: var(--text-silver);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        /* Reemplazo y organización de la imagen */
+        .book-cover {
+            width: 320px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border: 1px solid var(--gold-primary);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); /* Resplandor dorado */
+        }
+
+        h1 {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold-gradient);
+            color: #000;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-weight: 900;
+            border-radius: 2px;
+            font-size: 1.3rem;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .section-title {
+            color: var(--gold-primary);
+            border-bottom: 2px solid var(--gold-primary);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 25px;
+        }
+
+        .bonus-box {
+            border: 1px solid var(--gold-primary);
+            padding: 30px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #050505 100%);
+            position: relative;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <img src="image_0.png" alt="Representación visual de Código Alfa: El Manifiesto del 1%" class="hero-image">
+        <img src="tu_imagen_subida.png" alt="Código Alfa" class="book-cover">
         
-        <h1>Deja de ser un espectador en un mundo de Alfas</h1>
-        <p class="hero-sub">Hackea tu mentalidad, domina tu entorno y reclama la libertad que te pertenece.</p>
-        <a href="#oferta" class="cta-button">ADQUIRIR EL MANIFIESTO AHORA</a>
+        <h1>Código Alfa</h1>
+        <p style="font-size: 1.5rem; font-style: italic;">El Manifiesto del 1%</p>
+        <a href="#comprar" class="cta-button">RECLAMA TU LUGAR EN LA ÉLITE</a>
     </header>
 
     <div class="section">
-        <h2>¿Sientes que el sistema fue diseñado para mantenerte promedio?</h2>
-        <p>La mayoría de los hombres viven en un ciclo interminable de mediocridad, siguiendo reglas escritas por personas que nunca alcanzaron la libertad. Sienten que hay un potencial oculto, pero no tienen el mapa. "Código Alfa" no es un libro de consejos; es la demolición de tu antigua identidad para construir una basada en el poder, la disciplina y la claridad absoluta.</p>
+        <h2 class="section-title">La Psicología del Dominio</h2>
+        <p>No estás aquí por casualidad. Estás aquí porque el sistema ya no puede contener tu ambición. <strong>Código Alfa</strong> es la herramienta de reprogramación diseñada para el hombre que exige más de la vida, más de sus negocios y más de sí mismo.</p>
     </div>
 
-    <div class="section">
-        <h2>Lo que obtendrás al descifrar el Código:</h2>
-        <ul class="bullets">
-            <li><strong>Reprogramación Mental Total:</strong> Elimina los bloqueos subconscientes que te impiden escalar tus ingresos y tu influencia.</li>
-            <li><strong>Liderazgo Magnético de Élite:</strong> Cómo convertirte en la autoridad indiscutible de cualquier sala, sin esfuerzo.</li>
-            <li><strong>Arquitectura de Libertad Financiera:</strong> Estrategias tangibles para diseñar una vida fuera de la carrera de la rata (9 a 5).</li>
-            <li><strong>Dominio Emocional:</strong> Controla tu enfoque y energía bajo presión extrema.</li>
-        </ul>
-    </div>
-
-    <div id="oferta" class="section" style="text-align: center; background-color: var(--accent); border-radius: 8px; padding: 50px 20px;">
-        <h2>Únete al 1% Hoy Mismo</h2>
-        <p>Acceso inmediato al Manifiesto que está cambiando el juego.</p>
-        <p class="price">$29.00 USD</p>
-        
+    <div class="section" id="comprar">
         <div class="bonus-box">
-            <p style="color: var(--primary); font-weight: bold; font-size: 1.2rem; margin-top: 0;">BONO EXCLUSIVO:</p>
-            <p><strong>Guía de Biohacking para Productividad Extrema:</strong> Los protocolos exactos usados por la élite para rendir al 200% (Gratis solo con tu compra hoy).</p>
+            <h3 style="color: var(--gold-light);">OFERTA DE LANZAMIENTO EXCLUSIVA</h3>
+            <p>Accede al manifiesto completo + 3 Masterclasses sobre Libertad Financiera.</p>
+            <p style="font-size: 2.5rem; margin: 10px 0;">$29.00 USD</p>
+            <a href="#" class="cta-button" style="padding: 15px 30px;">DESBLOQUEAR MI ACCESO</a>
         </div>
-        
-        <a href="#" class="cta-button">SÍ, QUIERO EL CÓDIGO ALFA</a>
-        <p style
+    </div>
+</div>
+
+</body>
+</html>
