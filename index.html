@@ -1,183 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CÓDIGO ALFA VIP | El 1% No Compite, Lidera</title>
-    <style>
-        /* VARIABLES PREMIUM */
-        :root {
-            --bg: #000000;
-            --card: #0A0A0A;
-            --gold: #AD935B; /* Oro Envejecido */
-            --gold-bright: #D4AF37;
-            --text: #F8F9FB;
-            --muted: #444444;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acceso Alfa VIP</title>
 
-        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
-        
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.4;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a, #111);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-        /* Iluminación Radial Periférica */
-        .glow-bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% -20%, rgba(173, 147, 91, 0.08), transparent 50%);
-            z-index: -1;
-        }
+.container {
+    background: rgba(20,20,20,0.95);
+    backdrop-filter: blur(10px);
+    padding: 45px;
+    border-radius: 14px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255,255,255,0.05);
+}
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; flex: 1; }
+.badge {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #f5c542;
+    margin-bottom: 10px;
+}
 
-        /* HEADER MINIMALISTA */
-        header { 
-            text-align: center; 
-            margin-bottom: 90px; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-        }
-        .logo-img { 
-            width: 100px; 
-            height: auto; 
-            margin-bottom: 15px; 
-            filter: grayscale(1); 
-            border: 1px solid #1a1a1a; 
-            padding: 5px; 
-        }
-        .brand-tag { 
-            font-size: 13px; 
-            letter-spacing: 5px; 
-            text-transform: uppercase; 
-            color: var(--gold); 
-            font-weight: 300; 
-        }
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
 
-        /* LAYOUT PRINCIPAL (The Vault) */
-        .hero { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 80px; 
-            align-items: center; 
-        }
+.sub {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
 
-        /* Títulos masivos y autoridad */
-        .hero-text h1 {
-            font-size: clamp(40px, 6vw, 64px);
-            font-weight: 900;
-            line-height: 0.9;
-            letter-spacing: -3px;
-            margin-bottom: 30px;
-        }
-        .hero-text p {
-            font-size: 18px;
-            color: #777;
-            max-width: 450px;
-            font-weight: 300;
-            margin-bottom: 40px;
-        }
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #1a1a1a;
+    color: #fff;
+}
 
-        /* Caja de captura Premium (Glassmorphism sutil) */
-        .vault-card {
-            background: rgba(10, 10, 10, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 50px;
-            border-radius: 4px;
-        }
+button {
+    width: 100%;
+    padding: 15px;
+    background: #f5c542;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
 
-        h2 { font-size: 22px; margin-bottom: 30px; letter-spacing: -0.5px; font-weight: 500; }
+button:hover {
+    background: #d4a82f;
+    transform: translateY(-2px);
+}
 
-        /* Inputs minimalistas */
-        input {
-            width: 100%; padding: 18px 0; margin-bottom: 30px;
-            background: transparent; border: none; border-bottom: 1px solid var(--muted);
-            color: white; font-size: 16px; transition: 0.3s; border-radius: 0;
-        }
-        input:focus { border-bottom-color: var(--gold); }
+.social-proof {
+    font-size: 12px;
+    color: #777;
+    margin-top: 15px;
+}
 
-        /* Botón de acción VIP */
-        .btn-vip {
-            width: 100%;
-            padding: 20px;
-            background: var(--gold);
-            color: #000;
-            border: none;
-            font-weight: 900;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn-vip:hover { background: var(--gold-bright); transform: translateY(-2px); }
+.urgency {
+    font-size: 12px;
+    color: #ff4d4d;
+    margin-top: 10px;
+}
 
-        /* FOOTER */
-        footer {
-            margin-top: 150px; 
-            padding: 40px 0; 
-            border-top: 1px solid #111;
-            text-align: center; 
-            font-size: 11px; 
-            color: #333; 
-            letter-spacing: 2px;
-        }
-        .email-link { color: #555; text-decoration: none; display: block; margin-top: 10px; font-weight: bold; }
-
-        /* RESPONSIVE MÓVIL */
-        @media (max-width: 900px) {
-            .hero { grid-template-columns: 1fr; text-align: center; }
-            .hero-text p { margin-inline: auto; }
-            .hero-text h1 { font-size: 45px; }
-            header { margin-bottom: 60px; }
-        }
-    </style>
+.success {
+    display: none;
+    color: #00ffae;
+    margin-top: 15px;
+    font-size: 14px;
+}
+</style>
 </head>
+
 <body>
-    <div class="glow-bg"></div>
 
-    <div class="container">
-        <header>
-            <img src="https://i.ibb.co/mD8mK0z6/image.png" alt="Logo Código Alfa" class="logo-img">
-            <div class="brand-tag">Albert Sierra · VIP Access</div>
-        </header>
+<div class="container">
 
-        <main class="hero">
-            <section class="hero-text">
-                <h1>CÓDIGO<br>ALFA VIP</h1>
-                <p>La arquitectura operativa de disciplina y dominio mental para el 1%.</p>
-                <img src="https://i.ibb.co/qR8XFzD0/image.png" alt="Guía VIP" style="width: 100%; max-width: 320px; margin-top: 20px;">
-            </section>
+    <div class="badge">ACCESO RESTRINGIDO</div>
 
-            <section class="vault-card">
-                <h2>INICIAR ACCESO</h2>
-                <form action="#" method="POST">
-                    <input type="text" placeholder="NOMBRE" required>
-                    <input type="email" placeholder="EMAIL PRIVADO" required>
-                    <button type="submit" class="btn-vip">Obtener Guía Ahora</button>
-                </form>
-                <p style="font-size: 9px; color: #222; margin-top: 25px; letter-spacing: 1px; text-align: center;">
-                  PROCESO ENCRIPTADO · SIN SPAM
-                </p>
-            </section>
-        </main>
+    <h1>Código Alfa VIP</h1>
+
+    <div class="sub">
+        No es contenido público. Es información diseñada para quienes quieren posicionarse por delante del 99%.
     </div>
 
-    <footer>
-        <p>© <span id="year"></span> CÓDIGO ALFA</p>
-        <a href="mailto:codigo.alfa2.3@gmail.com" class="email-link">SOPORTE EXCLUSIVO: CODIGO.ALFA2.3@GMAIL.COM</a>
-    </footer>
+    <form id="form">
+        <input type="email" name="email" placeholder="Tu mejor email" required>
+        <button type="submit" id="btn">SOLICITAR ACCESO</button>
+    </form>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <div class="success" id="success">
+        Acceso solicitado. Revisa tu email.
+    </div>
+
+    <div class="urgency">
+        Solo 37 accesos disponibles hoy
+    </div>
+
+    <div class="social-proof">
+        +1,284 ya dentro
+    </div>
+
+</div>
+
+<script>
+const form = document.getElementById('form');
+const btn = document.getElementById('btn');
+const success = document.getElementById('success');
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    btn.innerText = "Procesando...";
+    btn.disabled = true;
+
+    setTimeout(() => {
+        success.style.display = "block";
+        btn.innerText = "Acceso solicitado";
+    }, 1200);
+});
+</script>
+
 </body>
 </html>
