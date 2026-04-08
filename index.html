@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CÓDIGO ALFA</title>
+<title>CÓDIGO ALFA VIP</title>
 
-<!-- Tipografías -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<!-- Tipografía -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
 /* ================= RESET ================= */
 * {
   margin: 0;
@@ -20,26 +19,27 @@
 /* ================= BASE ================= */
 body {
   font-family: 'Inter', sans-serif;
-  background: #000;
+  background: #000000;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem 1rem;
+  padding: 2rem 1rem;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
-/* Glow ambiental */
+/* Glow ambiental radial */
 body::before {
   content: "";
   position: fixed;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(255,215,0,0.2), transparent 70%);
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  filter: blur(100px);
+  filter: blur(120px);
   z-index: 0;
 }
 
@@ -48,13 +48,10 @@ body::before {
   font-size: 0.75rem;
   letter-spacing: 2px;
   margin-bottom: 2rem;
-
-  /* Oro */
   background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  filter: drop-shadow(0 0 8px rgba(212,175,55,0.4));
+  filter: drop-shadow(0 0 10px rgba(212,175,55,0.4));
 }
 
 /* ================= HERO ================= */
@@ -63,54 +60,66 @@ body::before {
   z-index: 1;
 }
 
-/* Título principal oro */
+/* ================= TÍTULO ANIMADO ORO ================= */
 h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  font-weight: 700;
   letter-spacing: 2px;
-
+  margin-bottom: 1rem;
+  
   background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
+  filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));
+  text-shadow: 0 0 5px rgba(255,215,0,0.3), 0 0 15px rgba(255,215,0,0.2);
+  
+  animation: goldFlow 5s linear infinite;
+}
 
-  filter: drop-shadow(0 0 8px rgba(212,175,55,0.4));
+/* Animación de flujo de oro */
+@keyframes goldFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Subtítulo */
 .subtitle {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-style: italic;
-  color: #888;
-  margin-top: 0.5rem;
+  color: #bbb;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
 }
 
 /* ================= EBOOK DISPLAY ================= */
 .ebook {
-  margin: 2rem auto;
   width: 180px;
   height: 260px;
+  margin: 0 auto 2rem;
   border-radius: 12px;
   background: #0a0a0a;
-
   border: 2px solid transparent;
   border-image: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5e6, #aa771c) 1;
-
-  box-shadow:
-    0 0 15px rgba(212,175,55,0.2),
-    0 0 40px rgba(212,175,55,0.1);
+  box-shadow: 0 0 15px rgba(212,175,55,0.2), 0 0 35px rgba(212,175,55,0.1);
 }
 
-/* ================= VAULT ================= */
+/* ================= VAULT (FORM) ================= */
 .vault {
   width: 100%;
   max-width: 400px;
-  background: #0a0a0a;
-  border-radius: 16px;
   padding: 2rem;
+  border-radius: 16px;
+  background: rgba(10,10,10,0.8);
+  backdrop-filter: blur(12px);
+  text-align: center;
   z-index: 1;
 }
 
-/* ================= FORM ================= */
+/* Formulario */
 form {
   display: flex;
   flex-direction: column;
@@ -121,14 +130,14 @@ form {
 input {
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(212,175,55,0.5);
+  border-bottom: 1px solid rgba(212,175,55,0.6);
   padding: 0.7rem 0;
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 input::placeholder {
-  color: #777;
+  color: #888;
 }
 
 input:focus {
@@ -136,47 +145,39 @@ input:focus {
   border-bottom: 1px solid #ffd700;
 }
 
-/* ================= BOTÓN CTA ================= */
+/* Botón CTA con efecto pulso dorado */
 button {
-  margin-top: 1rem;
   padding: 1rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 1.2px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
-
-  font-weight: 800;
-  letter-spacing: 1.2px;
   color: #000;
-
   background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
-
-  box-shadow:
-    0 0 10px rgba(212,175,55,0.4),
-    inset 0 0 5px rgba(255,255,255,0.4);
-
+  box-shadow: 0 0 10px rgba(212,175,55,0.5), inset 0 0 5px rgba(255,255,255,0.3);
   transition: all 0.3s ease;
+  background-size: 300% 300%;
+  animation: goldFlowButton 4s linear infinite;
 }
 
-/* Efecto pulso brillo */
 button:hover {
   transform: scale(1.05);
-  box-shadow:
-    0 0 25px rgba(212,175,55,0.8),
-    0 0 50px rgba(212,175,55,0.5);
+  box-shadow: 0 0 25px rgba(212,175,55,0.9), 0 0 50px rgba(212,175,55,0.5);
+}
+
+/* Animación de flujo para el botón */
+@keyframes goldFlowButton {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ================= RESPONSIVE ================= */
 @media(min-width: 768px) {
-
-  h1 {
-    font-size: 4.5rem;
-  }
-
-  .ebook {
-    width: 220px;
-    height: 320px;
-  }
-
+  h1 { font-size: 4.5rem; }
+  .ebook { width: 220px; height: 320px; }
 }
 
 </style>
@@ -185,9 +186,7 @@ button:hover {
 <body>
 
 <!-- TOP BAR -->
-<div class="topbar">
-  EL 1% NO COMPITE, DOMINA.
-</div>
+<div class="topbar">EL 1% NO COMPITE, DOMINA.</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -206,16 +205,9 @@ button:hover {
 <!-- FORMULARIO -->
 <section class="vault">
   <form>
-
-    <!-- INPUT NOMBRE -->
     <input type="text" placeholder="NOMBRE" required>
-
-    <!-- INPUT EMAIL -->
     <input type="email" placeholder="EMAIL PRIVADO" required>
-
-    <!-- BOTÓN CTA -->
     <button type="submit">RECLAMAR ACCESO ÉLITE</button>
-
   </form>
 </section>
 
