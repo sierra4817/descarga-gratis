@@ -3,141 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CÓDIGO ALFA VIP | Acceso Privado</title>
+<title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= RESET ================= */
+/* ================= BASE ================= */
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     font-family:'Inter',sans-serif;
     background:#000;
-    color:#e6e6e6;
-    display:flex;
-    justify-content:center;
-    padding:20px;
+    color:#dcdcdc;
+    line-height:1.6;
 }
 
-/* ================= WRAPPER ================= */
+/* Glow ambiente */
+body::before{
+    content:"";
+    position:fixed;
+    width:800px;
+    height:800px;
+    background:radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    filter:blur(120px);
+    z-index:0;
+}
+
+/* ================= CONTENEDOR ================= */
 .container{
-    width:100%;
-    max-width:480px;
+    max-width:1100px;
+    margin:auto;
+    padding:80px 20px;
+    position:relative;
+    z-index:1;
 }
 
-/* ================= TOP BAR ================= */
-.topbar{
-    text-align:center;
-    font-size:0.75rem;
-    letter-spacing:2px;
-    color:#555;
-    margin-bottom:40px;
-}
-
-/* ================= TITLE ================= */
-h1{
-    font-family:'Playfair Display',serif;
-    font-size:2.6rem;
-    text-align:center;
-    margin-bottom:10px;
-    letter-spacing:1px;
-
+/* ================= ORO REAL ================= */
+.gold{
     background:linear-gradient(135deg,#bf953f 0%,#fcf6ba 25%,#b38728 50%,#fbf5e6 75%,#aa771c 100%);
+    background-size:300% 300%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
+    animation:goldMove 6s linear infinite;
 }
 
-/* ================= SUBTITLE ================= */
-.subtitle{
+@keyframes goldMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* ================= HERO ================= */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    color:#888;
-    font-size:0.95rem;
-    margin-bottom:30px;
+    padding:20px;
+    border-bottom:1px solid rgba(212,175,55,0.3);
 }
 
-/* ================= EBOOK ================= */
-.ebook{
-    width:160px;
-    height:240px;
-    margin:0 auto 40px;
-    border-radius:8px;
-    background:#0a0a0a;
-    border:1px solid #2a2a2a;
-    box-shadow:0 10px 30px rgba(0,0,0,0.8);
-}
-
-/* ================= VAULT ================= */
-.vault{
-    background:#0a0a0a;
-    padding:30px;
-    border-radius:12px;
-    border:1px solid rgba(191,149,63,0.25);
-}
-
-/* ================= INPUTS ================= */
-input{
-    width:100%;
-    background:transparent;
-    border:none;
-    border-bottom:1px solid #333;
-    padding:12px 5px;
-    margin-bottom:20px;
-    color:#fff;
-    font-size:0.9rem;
-}
-
-input::placeholder{
+.top{
+    font-size:0.7rem;
+    letter-spacing:2px;
     color:#666;
+    margin-bottom:15px;
 }
 
-input:focus{
-    outline:none;
-    border-bottom:1px solid #bf953f;
+h1{
+    font-family:'Cinzel',serif;
+    font-size:4rem;
+    letter-spacing:2px;
 }
 
-/* ================= BUTTON ================= */
-button{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:6px;
-    font-weight:600;
-    font-size:0.9rem;
-    cursor:pointer;
-
-    background:linear-gradient(135deg,#bf953f,#fcf6ba,#b38728);
-    color:#000;
-
-    transition:all 0.25s ease;
-}
-
-button:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 25px rgba(191,149,63,0.35);
-}
-
-/* ================= PROOF ================= */
-.proof{
-    text-align:center;
-    font-size:0.75rem;
-    color:#666;
+.sub{
+    max-width:700px;
     margin-top:15px;
+    color:#aaa;
+    font-size:1.1rem;
+}
+
+/* ================= BOTON ================= */
+.cta{
+    margin-top:30px;
+    padding:18px 45px;
+    border:none;
+    cursor:pointer;
+    font-weight:700;
+    letter-spacing:1px;
+    border-radius:4px;
+    color:#000;
+    background:linear-gradient(135deg,#bf953f,#fcf6ba,#b38728);
+    background-size:300% 300%;
+    animation:goldMove 4s linear infinite;
+    box-shadow:0 0 20px rgba(212,175,55,0.4);
+    transition:0.3s;
+}
+
+.cta:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 35px rgba(212,175,55,0.8);
+}
+
+/* ================= INTRO ================= */
+.intro{
+    max-width:800px;
+    margin:0 auto 60px;
+    border-left:3px solid rgba(212,175,55,0.5);
+    padding-left:20px;
+    font-style:italic;
+    color:#bbb;
+}
+
+/* ================= GRID ================= */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+/* ================= CARD ================= */
+.card{
+    background:#0a0a0a;
+    padding:35px;
+    border:1px solid #1a1a1a;
+    transition:0.3s;
+}
+
+.card:hover{
+    border-color:#bf953f;
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#bf953f;
+    margin-bottom:10px;
+}
+
+/* ================= LIST ================= */
+.list{
+    margin-top:60px;
+}
+
+.list li{
+    margin-bottom:15px;
+    list-style:none;
+}
+
+.list li::before{
+    content:"✓";
+    color:#bf953f;
+    margin-right:10px;
+}
+
+/* ================= FINAL ================= */
+.final{
+    margin-top:80px;
+    text-align:center;
+    padding:50px 20px;
+    background:#050505;
+    border:1px solid rgba(212,175,55,0.2);
 }
 
 /* ================= FOOTER ================= */
-.footer{
+footer{
     text-align:center;
-    font-size:0.7rem;
-    color:#444;
-    margin-top:30px;
+    padding:40px 20px;
+    color:#555;
+    font-size:0.8rem;
 }
 
 /* ================= RESPONSIVE ================= */
-@media(min-width:768px){
-    h1{font-size:3.5rem;}
-    .ebook{width:200px;height:300px;}
+@media(max-width:768px){
+    h1{font-size:2.5rem;}
+    .hero{height:auto;padding:100px 20px;}
 }
 
 </style>
@@ -145,29 +190,82 @@ button:hover{
 
 <body>
 
+<!-- HERO -->
+<section class="hero">
+
+    <div class="top">EL 1% NO COMPITE, DOMINA</div>
+
+    <h1 class="gold">CÓDIGO ALFA VIP</h1>
+
+    <p class="sub">
+        El manifiesto estratégico para el hombre que ha decidido dejar de reaccionar
+        y empezar a diseñar su realidad con precisión.
+    </p>
+
+    <button class="cta">DESCARGAR EL MANIFIESTO</button>
+
+</section>
+
+<!-- CONTENIDO -->
 <div class="container">
 
-    <div class="topbar">ACCESO PRIVADO</div>
-
-    <h1>CÓDIGO ALFA VIP</h1>
-    <p class="subtitle">El Manifiesto del 1%</p>
-
-    <div class="ebook"></div>
-
-    <div class="vault">
-        <form>
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Email privado" required>
-            <button type="submit">DESCARGAR GUÍA</button>
-        </form>
-        <div class="proof">Acceso inmediato · Sin spam</div>
+    <div class="intro">
+        La mayoría vive en piloto automático, compitiendo por validación y reaccionando
+        a estímulos externos. El 1% opera distinto: define las reglas, controla su entorno
+        y ejecuta sin ruido.
     </div>
 
-    <div class="footer">
-        © 2026 Código Alfa VIP
+    <h2 class="gold" style="text-align:center;margin-bottom:40px;">Pilares del Sistema</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Arquitectura Mental</h3>
+            <p>Reprograma tu identidad para operar desde control absoluto y no desde reacción emocional.</p>
+        </div>
+
+        <div class="card">
+            <h3>Disciplina Sistemática</h3>
+            <p>No dependes de motivación. Construyes sistemas que ejecutan incluso cuando no quieres.</p>
+        </div>
+
+        <div class="card">
+            <h3>Poder Financiero</h3>
+            <p>El dinero es una herramienta estratégica. Lo diriges, no lo persigues.</p>
+        </div>
+
+        <div class="card">
+            <h3>Presencia Dominante</h3>
+            <p>Influyes sin hablar. Tu estándar elimina competencia sin confrontación.</p>
+        </div>
+
+    </div>
+
+    <ul class="list">
+        <li>Eliminar dependencia de validación externa</li>
+        <li>Construir identidad inquebrantable</li>
+        <li>Operar con claridad en entornos de presión</li>
+        <li>Convertirte en referencia, no participante</li>
+    </ul>
+
+    <div class="final">
+
+        <h2 class="gold">Acceso al 1%</h2>
+
+        <p style="margin:20px 0;">
+            La mayoría intenta ganar dentro del sistema.  
+            El 1% crea el sistema.
+        </p>
+
+        <button class="cta">OBTENER ACCESO AHORA</button>
+
     </div>
 
 </div>
+
+<footer>
+    © 2026 Código Alfa VIP · Lidera o desaparece
+</footer>
 
 </body>
 </html>
