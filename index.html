@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
+    <title>CÓDIGO ALFA VIP | La Psicología del 1%</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --negro-absoluto: #000000;
-            --negro-card: #0a0a0a;
-            --dorado-alfa: #C5A059;
-            --dorado-brillante: #e2c28d;
-            --gris-texto: #cccccc;
+            --oro: #C5A059;
+            --oro-dark: #967B45;
+            --negro: #000000;
+            --gris-oscuro: #111111;
             --blanco: #ffffff;
+            --texto: #e0e0e0;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: var(--negro-absoluto);
-            color: var(--gris-texto);
+            background-color: var(--negro);
+            color: var(--texto);
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         h1, h2, h3 {
@@ -28,190 +28,168 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--blanco);
-            text-align: center;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'); 
-            background-size: cover;
-            background-position: center;
-            border-bottom: 2px solid var(--dorado-alfa);
-            padding: 20px;
+            padding: 120px 20px;
             text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), 
+                        url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover;
+            border-bottom: 2px solid var(--oro);
         }
 
-        .gold-text { color: var(--dorado-alfa); font-weight: bold; }
+        .gold { color: var(--oro); }
 
         .headline {
-            font-size: 4rem;
-            margin: 10px 0;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin: 0;
+            line-height: 1.1;
         }
 
         .subheadline {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin-bottom: 40px;
+            font-size: 1.4rem;
+            max-width: 900px;
+            margin: 20px auto 40px;
             font-weight: 300;
         }
 
-        /* Botón Principal */
-        .cta-main {
-            background: linear-gradient(45deg, var(--dorado-alfa), var(--dorado-brillante));
+        .cta-btn {
+            display: inline-block;
+            background: var(--oro);
             color: black;
-            padding: 22px 45px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.4rem;
+            padding: 20px 50px;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 2px;
-            transition: 0.3s all;
-            box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
-        }
-
-        .cta-main:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.5);
-        }
-
-        /* Secciones */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        .intro-text {
+            font-weight: 700;
+            font-family: 'Oswald', sans-serif;
             font-size: 1.2rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px;
-            border-left: 3px solid var(--dorado-alfa);
-            padding-left: 20px;
+            transition: 0.3s;
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
         }
 
-        /* Capítulos Grid */
-        .chapters-grid {
+        .cta-btn:hover {
+            transform: scale(1.05);
+            background: var(--blanco);
+        }
+
+        /* Secciones de Contenido */
+        .section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .quote-box {
+            background: var(--gris-oscuro);
+            padding: 40px;
+            border-left: 4px solid var(--oro);
+            font-style: italic;
+            font-size: 1.3rem;
+            margin-bottom: 60px;
+        }
+
+        /* Grid de Capítulos corregido según el PDF */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
-        .chapter-card {
-            background-color: var(--negro-card);
-            border: 1px solid #1a1a1a;
+        .card {
+            background: #080808;
             padding: 40px;
-            transition: 0.4s;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid #222;
+            transition: 0.3s;
         }
 
-        .chapter-card:hover {
-            border-color: var(--dorado-alfa);
-            background-color: #0f0f0f;
+        .card:hover { border-color: var(--oro); }
+
+        .card h3 { color: var(--oro); margin-top: 0; }
+
+        /* Lista de Puntos Clave */
+        .feature-list {
+            list-style: none;
+            padding: 0;
         }
 
-        .chapter-number {
-            color: var(--dorado-alfa);
-            font-family: 'Oswald', sans-serif;
-            font-size: 1rem;
+        .feature-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #222;
+            display: flex;
+            align-items: center;
         }
 
-        .chapter-card h3 {
-            text-align: left;
-            margin: 15px 0;
-            font-size: 1.6rem;
-            color: var(--dorado-alfa);
+        .feature-list li::before {
+            content: "✓";
+            color: var(--oro);
+            margin-right: 15px;
+            font-weight: bold;
         }
 
-        /* Sección Manifiesto */
-        .manifiesto-box {
-            background: #050505;
-            padding: 60px;
-            border-radius: 4px;
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        /* Footer */
         footer {
             padding: 60px 20px;
             text-align: center;
-            border-top: 1px solid #111;
-            font-size: 0.8rem;
-            color: #444;
-        }
-
-        @media (max-width: 768px) {
-            .headline { font-size: 2.5rem; }
-            .subheadline { font-size: 1.1rem; }
+            border-top: 1px solid #222;
+            font-size: 0.9rem;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        [span_0](start_span)[span_1](start_span)<p class="gold-text">EL 1% NO COMPITE, DOMINA[span_0](end_span)[span_1](end_span)</p>
-        <h1 class="headline">CÓDIGO ALFA VIP</h1>
-        <p class="subheadline">
-            [span_2](start_span)El manifiesto de poder y la hoja de ruta táctica para el hombre que ha decidido cruzar la línea hacia la excelencia absoluta[span_2](end_span).
-        </p>
-        <a href="#descarga" class="cta-main">DESCARGAR EL MANIFIESTO DEL 1%</a>
-    </section>
+    <header class="hero">
+        <h1 class="headline">CÓDIGO <span class="gold">ALFA VIP</span></h1>
+        <p class="subheadline">La Psicología del 1% que <span class="gold">no compite, lidera</span>. El manifiesto definitivo de Albert S para el hombre que busca la excelencia absoluta.</p>
+        <a href="#comprar" class="cta-btn">UNIRSE AL CÍRCULO DEL 1%</a>
+    </header>
 
-    <div class="container">
-        <div class="intro-text">
-            [span_3](start_span)"La mayoría vive en silencio, compitiendo por las sobras, reaccionando al mundo en lugar de crearlo. Pero tú no eres la mayoría[span_3](end_span)."
+    <main class="section">
+        <div class="quote-box">
+            [span_0](start_span)"Al hombre moderno se le ha vendido una mentira: que debe disculparse por su ambición... La mayoría vive en silencio, compitiendo por las sobras."[span_0](end_span)
         </div>
 
-        <h2>Pilares del Dominio</h2>
+        <h2>La Hoja de Ruta Táctica</h2>
+        [span_1](start_span)<p>Este libro deconstruye los mitos que mantienen a los hombres débiles y presenta los pilares de la élite mundial[span_1](end_span):</p>
         
-        <div class="chapters-grid">
-            <div class="chapter-card">
-                <span class="chapter-number">CAPÍTULO 1</span>
-                <h3>Mentalidad del 1%</h3>
-                [span_4](start_span)[span_5](start_span)<p>Reprograma tu mente para eliminar el miedo y la duda. Deja de ser un "Participante" que reacciona al destino y conviértete en el "Arquitecto" que lo diseña[span_4](end_span)[span_5](end_span).</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Capítulo 1: El Despertar</h3>
+                <p>Quema el mapa equivocado. [span_2](start_span)[span_3](start_span)Pasa de ser un "Participante" que reacciona a ser un "Arquitecto" que diseña su realidad[span_2](end_span)[span_3](end_span).</p>
             </div>
-
-            <div class="chapter-card">
-                <span class="chapter-number">CAPÍTULO 2</span>
-                <h3>Disciplina de Acero</h3>
-                <p>La motivación es una mentira volátil. [span_6](start_span)[span_7](start_span)Necesitas Ingeniería del Comportamiento para construir hábitos que te hagan ganar independientemente de cómo te sientas[span_6](end_span)[span_7](end_span).</p>
+            <div class="card">
+                <h3>Capítulo 2: Disciplina de Acero</h3>
+                <p>La motivación es una mentira volátil. [span_4](start_span)[span_5](start_span)Necesitas Ingeniería del Comportamiento y rituales de mañana en "Modo Ofensivo"[span_4](end_span)[span_5](end_span).</p>
             </div>
-
-            <div class="chapter-card">
-                <span class="chapter-number">CAPÍTULO 3</span>
-                <h3>Dinero que Obedece</h3>
-                <p>El dinero debe ser tu mejor soldado, nunca tu comandante. [span_8](start_span)[span_9](start_span)Aprende la psicología de la riqueza masiva y el poder de la soberanía personal[span_8](end_span)[span_9](end_span).</p>
+            <div class="card">
+                <h3>Capítulo 3: Dinero que Obedece</h3>
+                <p>El dinero es un amplificador. Aprende a ser su comandante y no su esclavo. [span_6](start_span)[span_7](start_span)[span_8](start_span)Tú eres el activo principal[span_6](end_span)[span_7](end_span)[span_8](end_span).</p>
             </div>
-
-            <div class="chapter-card">
-                <span class="chapter-number">CAPÍTULO 4</span>
-                <h3>Presencia Ejecutiva</h3>
-                <p>El verdadero poder es silencioso. [span_10](start_span)[span_11](start_span)Domina el arte de entrar en una habitación y tomar la autoridad por derecho natural sin decir una sola palabra[span_10](end_span)[span_11](end_span).</p>
+            <div class="card">
+                <h3>Capítulo 4: Presencia Ejecutiva</h3>
+                <p>Domina el silencio estratégico. [span_9](start_span)[span_10](start_span)No necesitas ruido para imponer autoridad; el poder real es una fuerza gravitacional[span_9](end_span)[span_10](end_span).</p>
             </div>
         </div>
 
-        <div class="manifiesto-box" id="descarga">
-            <h2>¿Estás listo para quemar las naves?</h2>
-            <p style="margin-bottom: 30px;">
-                La competencia es para los que no tienen identidad. [span_12](start_span)El 1% lidera, define las reglas y crea su propio juego[span_12](end_span).
-            </p>
-            <a href="TU_LINK_DE_HOTMART_O_PAGO" class="cta-main">OBTENER CÓDIGO ALFA VIP AHORA</a>
-            [span_13](start_span)<p style="margin-top: 20px; font-size: 0.9rem;">7 Días de garantía de satisfacción total[span_13](end_span).</p>
+        <h2 style="margin-top: 80px;">Lo que vas a dominar</h2>
+        <ul class="feature-list">
+            [span_11](start_span)[span_12](start_span)<li><strong>Monopolio Personal:</strong> Haz que la competencia sea irrelevante creando tu propio tablero[span_11](end_span)[span_12](end_span).</li>
+            [span_13](start_span)[span_14](start_span)<li><strong>Autoimagen de Élite:</strong> Ajusta tu termostato mental para que el éxito sea inevitable[span_13](end_span)[span_14](end_span).</li>
+            [span_15](start_span)[span_16](start_span)<li><strong>Silencio Estratégico:</strong> Aprende a ocupar espacio en la mente ajena sin decir una palabra[span_15](end_span)[span_16](end_span).</li>
+            [span_17](start_span)[span_18](start_span)<li><strong>Quemar las Naves:</strong> Elimina los "Planes B" y comprométete con tu victoria absoluta[span_17](end_span)[span_18](end_span).</li>
+        </ul>
+
+        <div style="text-align: center; margin-top: 60px;" id="comprar">
+            <h2 class="gold">¿ESTÁS LISTO PARA EL SIGUIENTE NIVEL?</h2>
+            [span_19](start_span)<p>El 1% no busca superar a la competencia; busca hacerla irrelevante[span_19](end_span).</p>
+            <br>
+            <a href="TU_LINK_HOTMART" class="cta-btn">DESCARGAR EL CÓDIGO ALFA VIP</a>
         </div>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 CÓDIGO ALFA VIP. [span_14](start_span)AUTOR: ALBERT S[span_14](end_span).</p>
-        <p>No aceptes el guion de la mediocridad. [span_15](start_span)Lidera o desaparece[span_15](end_span).</p>
+        <p>&copy; 2026 CÓDIGO ALFA VIP - Albert S. | [span_20](start_span)El 1% no compite; la competencia es para los que no tienen identidad[span_20](end_span).</p>
     </footer>
 
 </body>
