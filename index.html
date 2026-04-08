@@ -3,161 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CÓDIGO ALFA VIP | Acceso al 1%</title>
+<title>CÓDIGO ALFA VIP | Acceso Privado</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= BASE ================= */
+/* ================= RESET ================= */
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     font-family:'Inter',sans-serif;
     background:#000;
-    color:#eaeaea;
+    color:#e6e6e6;
     display:flex;
-    flex-direction:column;
-    align-items:center;
+    justify-content:center;
     padding:20px;
-    overflow-x:hidden;
 }
 
-/* Glow ambiente */
-body::before{
-    content:"";
-    position:fixed;
-    width:700px;
-    height:700px;
-    background:radial-gradient(circle, rgba(212,175,55,0.18), transparent 70%);
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    filter:blur(120px);
-    z-index:0;
+/* ================= WRAPPER ================= */
+.container{
+    width:100%;
+    max-width:480px;
 }
 
-/* ================= TOP ================= */
+/* ================= TOP BAR ================= */
 .topbar{
-    font-size:0.7rem;
-    letter-spacing:2px;
-    margin-bottom:20px;
-    color:#666;
-    z-index:1;
-}
-
-/* ================= HERO ================= */
-.hero{
     text-align:center;
-    z-index:1;
+    font-size:0.75rem;
+    letter-spacing:2px;
+    color:#555;
+    margin-bottom:40px;
 }
 
-/* ================= ORO REAL ================= */
-.gold{
+/* ================= TITLE ================= */
+h1{
+    font-family:'Playfair Display',serif;
+    font-size:2.6rem;
+    text-align:center;
+    margin-bottom:10px;
+    letter-spacing:1px;
+
     background:linear-gradient(135deg,#bf953f 0%,#fcf6ba 25%,#b38728 50%,#fbf5e6 75%,#aa771c 100%);
-    background-size:300% 300%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    filter:drop-shadow(0 0 8px rgba(212,175,55,0.4));
-    animation:goldMove 6s linear infinite;
 }
 
-/* Animación */
-@keyframes goldMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
-
-/* ================= TITULO ================= */
-h1{
-    font-family:'Cinzel',serif;
-    font-size:3rem;
-    letter-spacing:2px;
-}
-
-/* Sub */
-.sub{
-    margin-top:10px;
+/* ================= SUBTITLE ================= */
+.subtitle{
+    text-align:center;
     color:#888;
-    font-style:italic;
     font-size:0.95rem;
+    margin-bottom:30px;
 }
 
 /* ================= EBOOK ================= */
 .ebook{
-    width:180px;
-    height:260px;
-    margin:30px auto;
-    border-radius:10px;
+    width:160px;
+    height:240px;
+    margin:0 auto 40px;
+    border-radius:8px;
     background:#0a0a0a;
-    border:2px solid transparent;
-    border-image:linear-gradient(135deg,#bf953f,#fcf6ba,#b38728,#fbf5e6,#aa771c) 1;
-    box-shadow:0 0 20px rgba(212,175,55,0.25);
+    border:1px solid #2a2a2a;
+    box-shadow:0 10px 30px rgba(0,0,0,0.8);
 }
 
 /* ================= VAULT ================= */
 .vault{
-    width:100%;
-    max-width:380px;
-    background:rgba(10,10,10,0.85);
-    backdrop-filter:blur(12px);
+    background:#0a0a0a;
     padding:30px;
-    border-radius:14px;
-    margin-top:20px;
+    border-radius:12px;
+    border:1px solid rgba(191,149,63,0.25);
 }
 
-/* Inputs */
+/* ================= INPUTS ================= */
 input{
     width:100%;
     background:transparent;
     border:none;
-    border-bottom:1px solid rgba(212,175,55,0.5);
+    border-bottom:1px solid #333;
     padding:12px 5px;
     margin-bottom:20px;
     color:#fff;
+    font-size:0.9rem;
 }
 
-input::placeholder{color:#777;}
+input::placeholder{
+    color:#666;
+}
 
 input:focus{
     outline:none;
-    border-bottom:1px solid #ffd700;
+    border-bottom:1px solid #bf953f;
 }
 
-/* ================= BOTON ================= */
+/* ================= BUTTON ================= */
 button{
     width:100%;
     padding:14px;
-    font-weight:700;
     border:none;
-    border-radius:30px;
+    border-radius:6px;
+    font-weight:600;
+    font-size:0.9rem;
     cursor:pointer;
+
+    background:linear-gradient(135deg,#bf953f,#fcf6ba,#b38728);
     color:#000;
-    background:linear-gradient(135deg,#bf953f 0%,#fcf6ba 25%,#b38728 50%,#fbf5e6 75%,#aa771c 100%);
-    background-size:300% 300%;
-    animation:goldMove 4s linear infinite;
-    box-shadow:0 0 15px rgba(212,175,55,0.5);
-    transition:0.3s;
+
+    transition:all 0.25s ease;
 }
 
 button:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 30px rgba(212,175,55,0.9);
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(191,149,63,0.35);
 }
 
 /* ================= PROOF ================= */
 .proof{
-    margin-top:20px;
+    text-align:center;
     font-size:0.75rem;
     color:#666;
+    margin-top:15px;
+}
+
+/* ================= FOOTER ================= */
+.footer{
     text-align:center;
+    font-size:0.7rem;
+    color:#444;
+    margin-top:30px;
 }
 
 /* ================= RESPONSIVE ================= */
 @media(min-width:768px){
-    h1{font-size:4.5rem;}
-    .ebook{width:220px;height:320px;}
+    h1{font-size:3.5rem;}
+    .ebook{width:200px;height:300px;}
 }
 
 </style>
@@ -165,31 +145,28 @@ button:hover{
 
 <body>
 
-<!-- TOP -->
-<div class="topbar">ACCESO EXCLUSIVO AL 1%</div>
+<div class="container">
 
-<!-- HERO -->
-<section class="hero">
+    <div class="topbar">ACCESO PRIVADO</div>
 
-    <h1 class="gold">CÓDIGO ALFA VIP</h1>
-    <p class="sub">El Manifiesto del 1%</p>
+    <h1>CÓDIGO ALFA VIP</h1>
+    <p class="subtitle">El Manifiesto del 1%</p>
 
     <div class="ebook"></div>
 
-</section>
+    <div class="vault">
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Email privado" required>
+            <button type="submit">DESCARGAR GUÍA</button>
+        </form>
+        <div class="proof">Acceso inmediato · Sin spam</div>
+    </div>
 
-<!-- FORM -->
-<div class="vault">
-    <form>
-        <input type="text" placeholder="NOMBRE" required>
-        <input type="email" placeholder="EMAIL PRIVADO" required>
-        <button type="submit">DESCARGAR GUÍA AHORA</button>
-    </form>
-</div>
+    <div class="footer">
+        © 2026 Código Alfa VIP
+    </div>
 
-<!-- SOCIAL PROOF -->
-<div class="proof">
-    +4,500 hombres ya accedieron al sistema
 </div>
 
 </body>
