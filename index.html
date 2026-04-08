@@ -5,26 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CÓDIGO ALFA VIP | Acceso Privado</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= RESET ================= */
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     font-family:'Inter',sans-serif;
     background:#000;
     color:#e5e5e5;
-    overflow-x:hidden;
 }
 
-/* ================= AMBIENTE PREMIUM ================= */
+/* GLOW */
 body::before{
     content:"";
     position:fixed;
-    width:900px;
-    height:900px;
+    width:800px;
+    height:800px;
     background:radial-gradient(circle, rgba(212,175,55,0.12), transparent 70%);
     top:50%;
     left:50%;
@@ -33,7 +32,7 @@ body::before{
     z-index:0;
 }
 
-/* ================= CONTENEDOR ================= */
+/* CONTAINER */
 .container{
     max-width:1100px;
     margin:auto;
@@ -42,128 +41,94 @@ body::before{
     z-index:1;
 }
 
-/* ================= ORO CINEMÁTICO ================= */
+/* GOLD */
 .gold{
-    position:relative;
     background:linear-gradient(120deg,#bf953f,#fcf6ba,#b38728,#fbf5e6,#aa771c);
-    background-size:400% 400%;
+    background-size:300% 300%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    animation:goldFlow 8s ease infinite;
+    animation:gold 6s infinite;
 }
 
-/* Reflejo que pasa */
-.gold::after{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-150%;
-    width:50%;
-    height:100%;
-    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-    transform:skewX(-25deg);
-    animation:shine 4s infinite;
+@keyframes gold{
+    0%{background-position:0%}
+    50%{background-position:100%}
+    100%{background-position:0%}
 }
 
-/* Animaciones */
-@keyframes goldFlow{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
-
-@keyframes shine{
-    0%{left:-150%;}
-    50%{left:120%;}
-    100%{left:120%;}
-}
-
-/* ================= HERO ================= */
+/* HERO */
 .hero{
-    height:100vh;
     display:flex;
-    flex-direction:column;
-    justify-content:center;
+    flex-wrap:wrap;
     align-items:center;
-    text-align:center;
-    padding:20px;
+    justify-content:center;
+    gap:40px;
+    padding:100px 20px;
 }
 
-.top{
-    font-size:0.7rem;
-    letter-spacing:3px;
-    color:#555;
-    margin-bottom:15px;
+/* TEXT */
+.hero-text{
+    max-width:500px;
 }
 
-/* ================= TITULO ================= */
 h1{
     font-family:'Cinzel',serif;
-    font-size:4.5rem;
-    letter-spacing:2px;
+    font-size:3.5rem;
 }
 
-/* ================= SUB ================= */
 .sub{
-    max-width:750px;
     margin-top:20px;
     color:#aaa;
-    font-size:1.2rem;
 }
 
-/* ================= CTA ================= */
-.cta{
-    margin-top:40px;
-    padding:18px 50px;
+/* MOCKUP */
+.mockup{
+    width:280px;
+    transform:rotateY(-15deg) rotateX(5deg);
+    box-shadow:0 30px 60px rgba(0,0,0,0.8);
+    border-radius:8px;
+}
+
+/* FORM */
+.form-box{
+    margin-top:30px;
+    background:#0a0a0a;
+    padding:25px;
+    border:1px solid rgba(212,175,55,0.3);
+}
+
+input{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
     border:none;
-    cursor:pointer;
+    background:#111;
+    color:#fff;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
     font-weight:700;
-    letter-spacing:1px;
-    border-radius:4px;
+    cursor:pointer;
     color:#000;
-
     background:linear-gradient(135deg,#bf953f,#fcf6ba,#b38728);
-    background-size:300% 300%;
-    animation:goldFlow 5s infinite;
-
     box-shadow:0 0 20px rgba(212,175,55,0.5);
-    transition:all 0.3s ease;
 }
 
-.cta:hover{
-    transform:scale(1.07);
-    box-shadow:0 0 40px rgba(212,175,55,0.9);
-}
-
-/* ================= FRASE ================= */
-.statement{
-    max-width:800px;
-    margin:80px auto;
-    font-size:1.2rem;
-    text-align:center;
-    border-left:2px solid rgba(212,175,55,0.4);
-    padding-left:20px;
-    color:#bbb;
-}
-
-/* ================= GRID ================= */
+/* BENEFITS */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:30px;
+    margin-top:60px;
 }
 
-/* ================= CARD ================= */
 .card{
     background:#0a0a0a;
-    padding:35px;
+    padding:30px;
     border:1px solid #1a1a1a;
-    transition:0.4s;
-}
-
-.card:hover{
-    border-color:#bf953f;
-    transform:translateY(-6px);
 }
 
 .card h3{
@@ -171,43 +136,18 @@ h1{
     margin-bottom:10px;
 }
 
-/* ================= LIST ================= */
-.list{
-    margin-top:60px;
-}
-
-.list li{
-    list-style:none;
-    margin-bottom:15px;
-}
-
-.list li::before{
-    content:"—";
-    color:#bf953f;
-    margin-right:10px;
-}
-
-/* ================= FINAL ================= */
-.final{
-    margin-top:100px;
-    text-align:center;
-    padding:60px 20px;
-    background:#050505;
-    border:1px solid rgba(212,175,55,0.2);
-}
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer{
     text-align:center;
     padding:40px;
+    color:#555;
     font-size:0.8rem;
-    color:#444;
 }
 
-/* ================= RESPONSIVE ================= */
+/* RESPONSIVE */
 @media(max-width:768px){
     h1{font-size:2.5rem;}
-    .hero{height:auto;padding:120px 20px;}
+    .hero{flex-direction:column;}
 }
 
 </style>
@@ -215,78 +155,66 @@ footer{
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
 
-    <div class="top">ACCESO RESTRINGIDO</div>
+    <!-- TEXTO -->
+    <div class="hero-text">
+        <h1 class="gold">CÓDIGO ALFA VIP</h1>
 
-    <h1 class="gold">CÓDIGO ALFA VIP</h1>
+        <p class="sub">
+            No es un libro. Es el sistema que elimina tu versión promedio.
+        </p>
 
-    <p class="sub">
-        La mayoría compite por atención.  
-        El 1% controla la percepción.
-    </p>
+        <!-- FORM -->
+        <div class="form-box">
 
-    <button class="cta">DESCARGAR MANIFIESTO</button>
+            <form action="https://TU-SERVICIO.com/subscribe" method="POST">
+
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Email" required>
+
+                <button type="submit">DESCARGAR AHORA</button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <!-- MOCKUP -->
+    <img class="mockup" src="https://via.placeholder.com/400x600/000000/FFD700?text=CODIGO+ALFA+VIP" alt="Libro Código Alfa VIP">
 
 </section>
 
-<!-- CONTENIDO -->
 <div class="container">
-
-    <div class="statement">
-        No necesitas más información.  
-        Necesitas eliminar la identidad que te mantiene promedio.
-    </div>
 
     <div class="grid">
 
         <div class="card">
-            <h3>Identidad</h3>
-            <p>Tu realidad externa es reflejo directo de tu estándar interno.</p>
+            <h3>Reprogramación</h3>
+            <p>Cambia tu identidad desde la raíz.</p>
         </div>
 
         <div class="card">
-            <h3>Control</h3>
-            <p>El que controla su mente, controla cualquier entorno.</p>
+            <h3>Dominio Mental</h3>
+            <p>Control total sin depender de motivación.</p>
         </div>
 
         <div class="card">
-            <h3>Poder</h3>
-            <p>No se demuestra. Se percibe sin explicación.</p>
+            <h3>Poder Estratégico</h3>
+            <p>Dejas de reaccionar y empiezas a dirigir.</p>
         </div>
 
         <div class="card">
             <h3>Ejecución</h3>
-            <p>El 1% no duda. Decide y ejecuta.</p>
+            <p>Acción precisa sin ruido.</p>
         </div>
-
-    </div>
-
-    <ul class="list">
-        <li>Eliminar mentalidad reactiva</li>
-        <li>Construir identidad dominante</li>
-        <li>Ejecutar sin fricción emocional</li>
-        <li>Operar con claridad absoluta</li>
-    </ul>
-
-    <div class="final">
-
-        <h2 class="gold">Entrada al Círculo</h2>
-
-        <p style="margin:20px 0;">
-            No es contenido.  
-            Es reconfiguración.
-        </p>
-
-        <button class="cta">ACCEDER AHORA</button>
 
     </div>
 
 </div>
 
 <footer>
-    © 2026 Código Alfa VIP · Solo para el 1%
+© 2026 Código Alfa VIP · Acceso restringido
 </footer>
 
 </body>
