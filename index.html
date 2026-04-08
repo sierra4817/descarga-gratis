@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CÓDIGO ALFA VIP</title>
+<title>CÓDIGO ALFA | Descarga el Manifiesto</title>
 
-<!-- Tipografía -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
 
 <style>
 /* ================= RESET ================= */
@@ -19,27 +18,26 @@
 /* ================= BASE ================= */
 body {
   font-family: 'Inter', sans-serif;
-  background: #000000;
+  background: #000;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   overflow-x: hidden;
-  min-height: 100vh;
 }
 
-/* Glow ambiental radial */
+/* Glow ambiental */
 body::before {
   content: "";
   position: fixed;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(255,215,0,0.2), transparent 70%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  filter: blur(120px);
+  filter: blur(100px);
   z-index: 0;
 }
 
@@ -47,168 +45,210 @@ body::before {
 .topbar {
   font-size: 0.75rem;
   letter-spacing: 2px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 10px rgba(212,175,55,0.4));
+  filter: drop-shadow(0 0 8px rgba(212,175,55,0.4));
+  font-weight: 800;
 }
 
 /* ================= HERO ================= */
 .hero {
   text-align: center;
   z-index: 1;
+  max-width: 600px;
 }
 
-/* ================= TÍTULO ANIMADO ORO ================= */
 h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.8rem;
+  font-weight: 800;
   letter-spacing: 2px;
-  margin-bottom: 1rem;
-  
   background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
-  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
-  filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));
-  text-shadow: 0 0 5px rgba(255,215,0,0.3), 0 0 15px rgba(255,215,0,0.2);
-  
-  animation: goldFlow 5s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(212,175,55,0.4));
 }
 
-/* Animación de flujo de oro */
-@keyframes goldFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Subtítulo */
 .subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-style: italic;
-  color: #bbb;
-  margin-bottom: 2rem;
-  font-size: 0.95rem;
+  color: #d4af37;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
 }
 
-/* ================= EBOOK DISPLAY ================= */
+/* NUEVO: Promesa de valor */
+.headline-extra {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.4;
+  padding: 0 1rem;
+}
+
+.headline-extra span {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ================= EBOOK DISPLAY (Mejorado) ================= */
 .ebook {
-  width: 180px;
-  height: 260px;
-  margin: 0 auto 2rem;
-  border-radius: 12px;
-  background: #0a0a0a;
-  border: 2px solid transparent;
-  border-image: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5e6, #aa771c) 1;
-  box-shadow: 0 0 15px rgba(212,175,55,0.2), 0 0 35px rgba(212,175,55,0.1);
+  margin: 2rem auto;
+  width: 190px;
+  height: 270px;
+  border-radius: 4px;
+  background: linear-gradient(145deg, #0f0f0f, #000);
+  border: 1px solid rgba(212,175,55,0.3);
+  box-shadow: 15px 15px 30px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* ================= VAULT (FORM) ================= */
+.ebook::after {
+    content: "EBOOK GRATIS";
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    background: #bf953f;
+    color: #000;
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 5px 30px;
+    transform: rotate(45deg);
+}
+
+.ebook-content {
+    text-align: center;
+    border: 1px solid rgba(212,175,55,0.2);
+    margin: 10px;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ================= VAULT / FORM ================= */
 .vault {
   width: 100%;
   max-width: 400px;
-  padding: 2rem;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212,175,55,0.1);
   border-radius: 16px;
-  background: rgba(10,10,10,0.8);
-  backdrop-filter: blur(12px);
-  text-align: center;
+  padding: 2rem;
   z-index: 1;
+  margin-top: 1rem;
 }
 
-/* Formulario */
+.form-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: #888;
+}
+
 form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
-/* Inputs minimalistas */
 input {
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(212,175,55,0.6);
+  border-bottom: 1px solid rgba(212,175,55,0.3);
   padding: 0.7rem 0;
   color: #fff;
-  font-size: 0.95rem;
-}
-
-input::placeholder {
-  color: #888;
+  font-size: 0.9rem;
+  transition: 0.3s;
 }
 
 input:focus {
   outline: none;
-  border-bottom: 1px solid #ffd700;
+  border-bottom: 1px solid #fcf6ba;
 }
 
-/* Botón CTA con efecto pulso dorado */
+/* ================= BOTÓN CTA ================= */
 button {
-  padding: 1rem;
-  font-weight: 800;
-  font-size: 0.9rem;
-  letter-spacing: 1.2px;
+  margin-top: 1rem;
+  padding: 1.1rem;
   border: none;
   border-radius: 30px;
   cursor: pointer;
+  font-weight: 800;
+  letter-spacing: 1.2px;
   color: #000;
   background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
-  box-shadow: 0 0 10px rgba(212,175,55,0.5), inset 0 0 5px rgba(255,255,255,0.3);
+  box-shadow: 0 4px 15px rgba(212,175,55,0.3);
   transition: all 0.3s ease;
-  background-size: 300% 300%;
-  animation: goldFlowButton 4s linear infinite;
+  text-transform: uppercase;
 }
 
 button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(212,175,55,0.9), 0 0 50px rgba(212,175,55,0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(212,175,55,0.6);
 }
 
-/* Animación de flujo para el botón */
-@keyframes goldFlowButton {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.privacy-note {
+    font-size: 0.65rem;
+    color: #555;
+    text-align: center;
+    margin-top: 1rem;
 }
 
 /* ================= RESPONSIVE ================= */
 @media(min-width: 768px) {
-  h1 { font-size: 4.5rem; }
+  h1 { font-size: 4rem; }
   .ebook { width: 220px; height: 320px; }
+  .headline-extra { font-size: 1.2rem; }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">EL 1% NO COMPITE, DOMINA.</div>
+<div class="topbar">
+  EL 1% NO COMPITE, DOMINA.
+</div>
 
-<!-- HERO -->
 <section class="hero">
-
-  <!-- TÍTULO -->
   <h1>CÓDIGO ALFA</h1>
-
-  <!-- SUBTÍTULO -->
   <p class="subtitle">El Manifiesto del 1%</p>
+  
+  <p class="headline-extra">
+    Descarga gratis el mapa mental para <span>dejar de competir</span> y empezar a <span>dominar</span> tu mercado en 2026.
+  </p>
 
-  <!-- EBOOK -->
-  <div class="ebook"></div>
-
+  <div class="ebook">
+      <div class="ebook-content">
+          <div style="font-size: 0.6rem; color: #bf953f; letter-spacing: 2px;">MANIFIESTO</div>
+          <div style="font-size: 1.2rem; font-weight: 800; margin: 10px 0;">CÓDIGO ALFA</div>
+          <div style="width: 30px; height: 1px; background: #bf953f; margin: 0 auto;"></div>
+      </div>
+  </div>
 </section>
 
-<!-- FORMULARIO -->
 <section class="vault">
-  <form>
-    <input type="text" placeholder="NOMBRE" required>
+  <div class="form-header">
+      ¿A qué email te envío el acceso gratuito?
+  </div>
+  <form action="#" method="POST">
+    <input type="text" placeholder="TU NOMBRE" required>
     <input type="email" placeholder="EMAIL PRIVADO" required>
-    <button type="submit">RECLAMAR ACCESO ÉLITE</button>
+    
+    <button type="submit">DESCARGAR EBOOK GRATIS</button>
   </form>
+  
+  <p class="privacy-note">
+      *Acceso gratuito por tiempo limitado. <br>
+      Respetamos tu privacidad. Cero Spam.
+  </p>
 </section>
 
 </body>
