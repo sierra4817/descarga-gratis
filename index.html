@@ -3,29 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
+<title>CÓDIGO ALFA VIP | Acceso Privado</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= BASE ================= */
+/* ================= RESET ================= */
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     font-family:'Inter',sans-serif;
     background:#000;
-    color:#dcdcdc;
-    line-height:1.6;
+    color:#e5e5e5;
+    overflow-x:hidden;
 }
 
-/* Glow ambiente */
+/* ================= AMBIENTE PREMIUM ================= */
 body::before{
     content:"";
     position:fixed;
-    width:800px;
-    height:800px;
-    background:radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);
+    width:900px;
+    height:900px;
+    background:radial-gradient(circle, rgba(212,175,55,0.12), transparent 70%);
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
@@ -42,19 +42,40 @@ body::before{
     z-index:1;
 }
 
-/* ================= ORO REAL ================= */
+/* ================= ORO CINEMÁTICO ================= */
 .gold{
-    background:linear-gradient(135deg,#bf953f 0%,#fcf6ba 25%,#b38728 50%,#fbf5e6 75%,#aa771c 100%);
-    background-size:300% 300%;
+    position:relative;
+    background:linear-gradient(120deg,#bf953f,#fcf6ba,#b38728,#fbf5e6,#aa771c);
+    background-size:400% 400%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    animation:goldMove 6s linear infinite;
+    animation:goldFlow 8s ease infinite;
 }
 
-@keyframes goldMove{
+/* Reflejo que pasa */
+.gold::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-150%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+    transform:skewX(-25deg);
+    animation:shine 4s infinite;
+}
+
+/* Animaciones */
+@keyframes goldFlow{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
     100%{background-position:0% 50%;}
+}
+
+@keyframes shine{
+    0%{left:-150%;}
+    50%{left:120%;}
+    100%{left:120%;}
 }
 
 /* ================= HERO ================= */
@@ -66,65 +87,69 @@ body::before{
     align-items:center;
     text-align:center;
     padding:20px;
-    border-bottom:1px solid rgba(212,175,55,0.3);
 }
 
 .top{
     font-size:0.7rem;
-    letter-spacing:2px;
-    color:#666;
+    letter-spacing:3px;
+    color:#555;
     margin-bottom:15px;
 }
 
+/* ================= TITULO ================= */
 h1{
     font-family:'Cinzel',serif;
-    font-size:4rem;
+    font-size:4.5rem;
     letter-spacing:2px;
 }
 
+/* ================= SUB ================= */
 .sub{
-    max-width:700px;
-    margin-top:15px;
+    max-width:750px;
+    margin-top:20px;
     color:#aaa;
-    font-size:1.1rem;
+    font-size:1.2rem;
 }
 
-/* ================= BOTON ================= */
+/* ================= CTA ================= */
 .cta{
-    margin-top:30px;
-    padding:18px 45px;
+    margin-top:40px;
+    padding:18px 50px;
     border:none;
     cursor:pointer;
     font-weight:700;
     letter-spacing:1px;
     border-radius:4px;
     color:#000;
+
     background:linear-gradient(135deg,#bf953f,#fcf6ba,#b38728);
     background-size:300% 300%;
-    animation:goldMove 4s linear infinite;
-    box-shadow:0 0 20px rgba(212,175,55,0.4);
-    transition:0.3s;
+    animation:goldFlow 5s infinite;
+
+    box-shadow:0 0 20px rgba(212,175,55,0.5);
+    transition:all 0.3s ease;
 }
 
 .cta:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 35px rgba(212,175,55,0.8);
+    transform:scale(1.07);
+    box-shadow:0 0 40px rgba(212,175,55,0.9);
 }
 
-/* ================= INTRO ================= */
-.intro{
+/* ================= FRASE ================= */
+.statement{
     max-width:800px;
-    margin:0 auto 60px;
-    border-left:3px solid rgba(212,175,55,0.5);
+    margin:80px auto;
+    font-size:1.2rem;
+    text-align:center;
+    border-left:2px solid rgba(212,175,55,0.4);
     padding-left:20px;
-    font-style:italic;
     color:#bbb;
 }
 
 /* ================= GRID ================= */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:30px;
 }
 
@@ -133,12 +158,12 @@ h1{
     background:#0a0a0a;
     padding:35px;
     border:1px solid #1a1a1a;
-    transition:0.3s;
+    transition:0.4s;
 }
 
 .card:hover{
     border-color:#bf953f;
-    transform:translateY(-5px);
+    transform:translateY(-6px);
 }
 
 .card h3{
@@ -152,21 +177,21 @@ h1{
 }
 
 .list li{
-    margin-bottom:15px;
     list-style:none;
+    margin-bottom:15px;
 }
 
 .list li::before{
-    content:"✓";
+    content:"—";
     color:#bf953f;
     margin-right:10px;
 }
 
 /* ================= FINAL ================= */
 .final{
-    margin-top:80px;
+    margin-top:100px;
     text-align:center;
-    padding:50px 20px;
+    padding:60px 20px;
     background:#050505;
     border:1px solid rgba(212,175,55,0.2);
 }
@@ -174,15 +199,15 @@ h1{
 /* ================= FOOTER ================= */
 footer{
     text-align:center;
-    padding:40px 20px;
-    color:#555;
+    padding:40px;
     font-size:0.8rem;
+    color:#444;
 }
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:768px){
     h1{font-size:2.5rem;}
-    .hero{height:auto;padding:100px 20px;}
+    .hero{height:auto;padding:120px 20px;}
 }
 
 </style>
@@ -193,78 +218,75 @@ footer{
 <!-- HERO -->
 <section class="hero">
 
-    <div class="top">EL 1% NO COMPITE, DOMINA</div>
+    <div class="top">ACCESO RESTRINGIDO</div>
 
     <h1 class="gold">CÓDIGO ALFA VIP</h1>
 
     <p class="sub">
-        El manifiesto estratégico para el hombre que ha decidido dejar de reaccionar
-        y empezar a diseñar su realidad con precisión.
+        La mayoría compite por atención.  
+        El 1% controla la percepción.
     </p>
 
-    <button class="cta">DESCARGAR EL MANIFIESTO</button>
+    <button class="cta">DESCARGAR MANIFIESTO</button>
 
 </section>
 
 <!-- CONTENIDO -->
 <div class="container">
 
-    <div class="intro">
-        La mayoría vive en piloto automático, compitiendo por validación y reaccionando
-        a estímulos externos. El 1% opera distinto: define las reglas, controla su entorno
-        y ejecuta sin ruido.
+    <div class="statement">
+        No necesitas más información.  
+        Necesitas eliminar la identidad que te mantiene promedio.
     </div>
-
-    <h2 class="gold" style="text-align:center;margin-bottom:40px;">Pilares del Sistema</h2>
 
     <div class="grid">
 
         <div class="card">
-            <h3>Arquitectura Mental</h3>
-            <p>Reprograma tu identidad para operar desde control absoluto y no desde reacción emocional.</p>
+            <h3>Identidad</h3>
+            <p>Tu realidad externa es reflejo directo de tu estándar interno.</p>
         </div>
 
         <div class="card">
-            <h3>Disciplina Sistemática</h3>
-            <p>No dependes de motivación. Construyes sistemas que ejecutan incluso cuando no quieres.</p>
+            <h3>Control</h3>
+            <p>El que controla su mente, controla cualquier entorno.</p>
         </div>
 
         <div class="card">
-            <h3>Poder Financiero</h3>
-            <p>El dinero es una herramienta estratégica. Lo diriges, no lo persigues.</p>
+            <h3>Poder</h3>
+            <p>No se demuestra. Se percibe sin explicación.</p>
         </div>
 
         <div class="card">
-            <h3>Presencia Dominante</h3>
-            <p>Influyes sin hablar. Tu estándar elimina competencia sin confrontación.</p>
+            <h3>Ejecución</h3>
+            <p>El 1% no duda. Decide y ejecuta.</p>
         </div>
 
     </div>
 
     <ul class="list">
-        <li>Eliminar dependencia de validación externa</li>
-        <li>Construir identidad inquebrantable</li>
-        <li>Operar con claridad en entornos de presión</li>
-        <li>Convertirte en referencia, no participante</li>
+        <li>Eliminar mentalidad reactiva</li>
+        <li>Construir identidad dominante</li>
+        <li>Ejecutar sin fricción emocional</li>
+        <li>Operar con claridad absoluta</li>
     </ul>
 
     <div class="final">
 
-        <h2 class="gold">Acceso al 1%</h2>
+        <h2 class="gold">Entrada al Círculo</h2>
 
         <p style="margin:20px 0;">
-            La mayoría intenta ganar dentro del sistema.  
-            El 1% crea el sistema.
+            No es contenido.  
+            Es reconfiguración.
         </p>
 
-        <button class="cta">OBTENER ACCESO AHORA</button>
+        <button class="cta">ACCEDER AHORA</button>
 
     </div>
 
 </div>
 
 <footer>
-    © 2026 Código Alfa VIP · Lidera o desaparece
+    © 2026 Código Alfa VIP · Solo para el 1%
 </footer>
 
 </body>
