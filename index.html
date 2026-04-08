@@ -1,75 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acceso Confirmado</title>
+<!-- FORMULARIO (YA CONECTADO + REDIRECCIÓN) -->
+<form action="https://gmail.usX.list-manage.com/subscribe/post?u=TU_ID&id=TU_LISTA" method="POST">
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<input type="text" name="name" placeholder="Nombre" required>
+<input type="email" name="email" placeholder="Email" required>
 
-<style>
-body{
-    background:#000;
-    color:#e5e5e5;
-    font-family:'Inter',sans-serif;
-    text-align:center;
-    padding:80px 20px;
-}
+<!-- REDIRECCIÓN -->
+<input type="hidden" name="redirect" value="https://tusitio.com/gracias.html">
 
-.gold{
-    background:linear-gradient(120deg,#bf953f,#fcf6ba,#b38728);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
+<button type="submit">DESCARGAR AHORA</button>
 
-h1{
-    font-family:'Cinzel',serif;
-    font-size:3rem;
-}
-
-.box{
-    max-width:600px;
-    margin:40px auto;
-}
-
-.cta{
-    margin-top:30px;
-    padding:18px 40px;
-    border:none;
-    font-weight:700;
-    cursor:pointer;
-    color:#000;
-    background:linear-gradient(135deg,#bf953f,#fcf6ba,#b38728);
-}
-</style>
-</head>
-
-<body>
-
-<h1 class="gold">ACCESO CONFIRMADO</h1>
-
-<div class="box">
-
-<p>Revisa tu email. El manifiesto ya fue enviado.</p>
-
-<p style="margin-top:20px;">
-Pero antes de irte…
-</p>
-
-<h2 style="margin-top:30px;">
-La mayoría lee.  
-Pocos aplican.
-</h2>
-
-<p style="margin-top:20px;">
-Si quieres ejecutar de verdad, necesitas estructura.
-</p>
-
-<button class="cta">
-ACCEDER AL SISTEMA COMPLETO
-</button>
-
-</div>
-
-</body>
-</html>
+</form>
