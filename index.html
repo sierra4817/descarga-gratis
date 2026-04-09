@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <meta name="robots" content="index, follow">
     <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
     <meta name="description" content="Domina la psicología del 1%. Descarga el Manifiesto Alfa y deja de competir para empezar a liderar. Acceso exclusivo 2026.">
@@ -30,13 +29,13 @@
             margin: 0;
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
+            text-align: center;
         }
 
         h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px; color: var(--blanco-nitido); }
 
         .hero {
             padding: 150px 20px;
-            text-align: center;
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -186,7 +185,7 @@
             <h2 class="titulo-alfa" style="font-size: 2.5rem;">¿QUIERES MÁS?</h2>
             <p>Accede a los Protocolos Completos de Implementación.</p>
             <br>
-            <a href="TU_LINK_DE_GOOGLE_DRIVE_AQUI" class="cta-btn" style="max-width: 300px;">Comprar Código Alfa VIP</a>
+            <a href="https://drive.google.com/file/d/1nUlSOzEGNRx9r4S36GyrZRUjasrnn8vK/view?usp=drive_link" class="cta-btn" style="max-width: 300px;">Comprar Código Alfa VIP</a>
         </div>
     </main>
 
@@ -204,14 +203,14 @@
             btn.disabled = true;
 
             const data = new FormData(form);
-            const ebookLink = "TU_LINK_DE_GOOGLE_DRIVE_AQUI"; // <--- PEGA TU LINK AQUÍ
+            const ebookLink = "https://drive.google.com/file/d/1nUlSOzEGNRx9r4S36GyrZRUjasrnn8vK/view?usp=drive_link";
 
             fetch("https://formspree.io/f/mbdpqqpv", {
                 method: "POST",
                 body: data,
                 headers: { 'Accept': 'application/json' }
             }).finally(() => {
-                // Redirigir al ebook pase lo que pase
+                // Redirección forzada al Ebook
                 window.location.replace(ebookLink);
             });
 
