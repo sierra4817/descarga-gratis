@@ -34,7 +34,6 @@
 
         h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px; color: var(--blanco-nitido); }
 
-        /* HERO */
         .hero {
             padding: 150px 20px;
             text-align: center;
@@ -67,7 +66,6 @@
             letter-spacing: 2px;
         }
 
-        /* BARRA DE BENEFICIOS */
         .trust-bar {
             display: flex;
             flex-wrap: wrap;
@@ -85,7 +83,6 @@
         .trust-item { display: flex; align-items: center; gap: 10px; }
         .trust-icon { color: var(--oro-real); font-size: 1.2rem; }
 
-        /* FORMULARIO DE CAPTACIÓN VIP */
         .optin-container {
             max-width: 500px;
             margin: 0 auto;
@@ -129,7 +126,6 @@
         .cta-btn:hover { transform: scale(1.02); filter: brightness(1.2); }
         .cta-btn:disabled { opacity: 0.7; cursor: not-allowed; }
 
-        /* SECCIONES CONTENIDO */
         .section { padding: 100px 20px; max-width: 1000px; margin: 0 auto; }
         .quote-box {
             background: var(--gris-premium);
@@ -190,7 +186,7 @@
             <h2 class="titulo-alfa" style="font-size: 2.5rem;">¿QUIERES MÁS?</h2>
             <p>Accede a los Protocolos Completos de Implementación.</p>
             <br>
-            <a href="TU_LINK_HOTMART" class="cta-btn" style="max-width: 300px;">Comprar Código Alfa VIP</a>
+            <a href="https://pay.hotmart.com/TU_ID_AQUI" class="cta-btn" style="max-width: 300px;">Comprar Código Alfa VIP</a>
         </div>
     </main>
 
@@ -204,22 +200,25 @@
 
         form.addEventListener("submit", function(e) {
             e.preventDefault();
-            btn.innerHTML = "VALIDANDO...";
+            btn.innerHTML = "PROCESANDO...";
             btn.disabled = true;
 
             const data = new FormData(form);
 
+            // ENVÍO RÁPIDO Y REDIRECCIÓN FORZADA
             fetch("https://formspree.io/f/mbdpqqpv", {
                 method: "POST",
                 body: data,
                 headers: { 'Accept': 'application/json' }
-            }).then(() => {
-                // REDIRIGIR SIEMPRE
-                window.location.href = "TU_LINK_HOTMART_O_PDF";
-            }).catch(() => {
-                // REDIRIGIR INCLUSO SI HAY ERROR
-                window.location.href = "TU_LINK_HOTMART_O_PDF";
+            }).finally(() => {
+                // ESTA LÍNEA ES LA QUE TE LLEVA A HOTMART SÍ O SÍ
+                window.location.href = "https://pay.hotmart.com/TU_ID_AQUI"; 
             });
+
+            // Si después de 4 segundos no ha cargado, forzamos la salida
+            setTimeout(() => {
+                window.location.href = "https://pay.hotmart.com/TU_ID_AQUI";
+            }, 4000);
         });
     </script>
 
