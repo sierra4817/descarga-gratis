@@ -22,7 +22,6 @@
         .optin-container { max-width: 450px; margin: 30px auto; background: rgba(255,255,255,0.05); padding: 30px; border: 1px solid var(--oro-real); backdrop-filter: blur(10px); }
         input { width: 100%; padding: 15px; margin-bottom: 15px; background: #111; border: 1px solid #333; color: white; box-sizing: border-box; }
         
-        /* ESTILO DEL BOTÓN */
         .cta-btn { 
             display: inline-block; 
             width: 100%; 
@@ -44,7 +43,6 @@
         .section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
         .card { background: #050505; padding: 30px; border: 1px solid #1a1a1a; margin-bottom: 20px; }
         
-        /* CONTENEDOR DE VENTA CENTRADO FORZOSO */
         #comprar { 
             margin-top: 40px; 
             padding: 40px 20px; 
@@ -105,17 +103,19 @@
             btn.innerHTML = "PROCESANDO...";
             btn.disabled = true;
 
-            const ebookLink = "https://drive.google.com/file/d/1nUlSOzEGNRx9r4S36GyrZRUjasrnn8vK/view?usp=drive_link";
+            // LINK DE DRIVE ACTUALIZADO CON PERMISOS PÚBLICOS
+            const ebookLink = "https://drive.google.com/file/d/1nUlSOzEGNRx9r4S36GyrZRUjasrnn8vK/view?usp=sharing";
 
             fetch("https://formspree.io/f/mbdpqqpv", {
                 method: "POST",
                 body: new FormData(form),
                 headers: { 'Accept': 'application/json' }
             }).finally(() => {
-                window.location.replace(ebookLink);
+                window.location.href = ebookLink;
             });
 
-            setTimeout(() => { window.location.replace(ebookLink); }, 4500);
+            // Redirección de respaldo por si el fetch tarda demasiado
+            setTimeout(() => { window.location.href = ebookLink; }, 4000);
         });
     </script>
 </body>
