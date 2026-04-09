@@ -3,72 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
     <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
+    <meta name="description" content="Domina la psicología del 1%. Descarga el Manifiesto Alfa y deja de competir para empezar a liderar. Acceso exclusivo 2026.">
+    
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
+            --oro-celestial: #fcf6ba; 
+            --oro-real: #bf953f; 
+            --oro-profundo: #aa771c; 
+            --negro-absoluto: #000000;
+            --gris-premium: #0a0a0a;
+            --blanco-nitido: #ffffff;
+            --texto-claro: #f0f0f0;
             --oro-gradiente: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 25%, #fcf6ba 50%, #bf953f 75%, #aa771c 100%);
-            --negro: #000000;
-            --oro: #bf953f;
         }
-        body { font-family: 'Roboto', sans-serif; background-color: var(--negro); color: #f0f0f0; margin: 0; text-align: center; }
-        .hero { padding: 100px 20px; border-bottom: 3px solid transparent; border-image: var(--oro-gradiente) 1; }
-        .titulo-alfa { font-family: 'Oswald', sans-serif; font-size: 3.5rem; background: var(--oro-gradiente); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; }
-        .optin-container { max-width: 450px; margin: 40px auto; background: #0a0a0a; padding: 30px; border: 1px solid rgba(191, 149, 63, 0.3); }
-        input { width: 100%; padding: 15px; margin-bottom: 15px; background: #111; border: 1px solid #333; color: white; box-sizing: border-box; }
-        .cta-btn { width: 100%; background: var(--oro-gradiente); color: #000; padding: 20px; font-weight: 700; font-family: 'Oswald', sans-serif; border: none; cursor: pointer; text-transform: uppercase; }
-        .cta-btn:disabled { opacity: 0.5; }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--negro-absoluto);
+            color: var(--texto-claro);
+            margin: 0;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px; color: var(--blanco-nitido); }
+
+        .hero {
+            padding: 150px 20px;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            border-bottom: 3px solid transparent;
+            border-image: var(--oro-gradiente) 1;
+            box-shadow: 0 10px 50px rgba(191, 149, 63, 0.3);
+        }
+
+        .titulo-alfa {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 700;
+            background: var(--oro-gradiente);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.8));
+            line-height: 1.1;
+            margin: 0;
+        }
+
+        .subheadline {
+            font-size: 1.5rem;
+            max-width: 900px;
+            margin: 25px auto 45px;
+            color: var(--blanco-nitido);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .trust-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 25px 20px;
+            background: var(--gris-premium);
+            border-bottom: 1px solid #1a1a1a;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .trust-item { display: flex; align-items: center; gap: 10px; }
+        .trust-icon { color: var(--oro-real); font-size: 1.2rem; }
+
+        .optin-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border: 1px solid rgba(191, 149, 63, 0.3);
+            border-radius: 4px;
+            backdrop-filter: blur(10px);
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #111;
+            border: 1px solid #333;
+            color: white;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input:focus { border-color: var(--oro-real); outline: none; }
+
+        .cta-btn {
+            display: inline-block;
+            width: 100%;
+            background: var(--oro-gradiente);
+            color: #000;
+            padding: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            transition: 0.4s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .cta-btn:hover { transform: scale(1.02); filter: brightness(1.2); }
+        .cta-btn:disabled { opacity: 0.5; cursor: wait; }
+
+        .section { padding: 100px 20px; max-width: 1000px; margin: 0 auto; }
+        .quote-box {
+            background: var(--gris-premium);
+            padding: 50px;
+            border-left: 6px solid var(--oro-real);
+            font-style: italic; font-size: 1.6rem;
+            margin-bottom: 80px;
+            box-shadow: 15px 15px 50px rgba(0,0,0,0.8);
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .card { background: #050505; padding: 45px; border: 1px solid #1a1a1a; transition: 0.4s; }
+        .card:hover { border-color: var(--oro-real); transform: translateY(-10px); }
+
+        footer { padding: 50px 20px; text-align: center; background: #050505; color: #555; border-top: 1px solid #1a1a1a; }
     </style>
 </head>
 <body>
 
     <header class="hero">
         <h1 class="titulo-alfa">CÓDIGO ALFA VIP</h1>
+        <p class="subheadline">El Manifiesto del 1%: <span style="color:var(--oro-real)">No compitas, lidera</span></p>
+        
         <div class="optin-container">
-            <p style="margin-bottom: 20px; font-weight: 700;">ACCESO EXCLUSIVO 2026</p>
+            <p style="margin-bottom: 20px; font-weight: 700; letter-spacing: 1px;">DESCARGA EL MANIFIESTO GRATIS</p>
             
-            <form id="form-alfa">
-                <input type="text" name="name" placeholder="Tu Nombre" required>
+            <form id="alfa-form">
+                <input type="text" name="name" placeholder="Tu Nombre Completo" required>
                 <input type="email" name="email" placeholder="Tu Email Privado" required>
-                <button type="submit" id="btn-submit" class="cta-btn">Acceder al Manifiesto</button>
+                <button type="submit" id="submit-btn" class="cta-btn">Acceder al Manifiesto</button>
             </form>
-            <p id="status-msg" style="margin-top:15px; display:none;"></p>
+            
+            <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Tu privacidad es sagrada. Cero Spam.</p>
         </div>
     </header>
 
-    <script>
-        const form = document.getElementById("form-alfa");
-        const btn = document.getElementById("btn-submit");
+    <section class="trust-bar">
+        <div class="trust-item"><span class="trust-icon">⚡</span> Acceso Instantáneo</div>
+        <div class="trust-item"><span class="trust-icon">🔒</span> Pago Seguro</div>
+        <div class="trust-item"><span class="trust-icon">🔥</span> +7,000 Miembros</div>
+    </section>
 
-        form.addEventListener("submit", async function(e) {
-            e.preventDefault(); // ESTO EVITA QUE SALGA LA PANTALLA GRIS
-            
-            btn.innerHTML = "VALIDANDO...";
+    <main class="section">
+        <div class="quote-box">
+            "Al hombre moderno se le ha vendido una mentira: que debe disculparse por su ambición... La mayoría vive en silencio, compitiendo por las sobras."
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3 style="color:var(--oro-real)">El Despertar</h3>
+                <p>Quema el mapa que te dieron al nacer. Pasa de ser un "Participante" a ser el "Arquitecto".</p>
+            </div>
+            <div class="card">
+                <h3 style="color:var(--oro-real)">Disciplina</h3>
+                <p>La motivación es una mentira. Necesitas Ingeniería del Comportamiento y Modo Ofensivo.</p>
+            </div>
+        </div>
+
+        <div id="comprar" style="text-align: center; margin-top: 100px; padding: 60px; border: 1px solid var(--oro-real);">
+            <h2 class="titulo-alfa" style="font-size: 2.5rem;">¿QUIERES MÁS?</h2>
+            <p>Accede a los Protocolos Completos de Implementación.</p>
+            <br>
+            <a href="https://pay.hotmart.com/TU_LINK" class="cta-btn" style="max-width: 300px;">Comprar Código Alfa VIP</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CÓDIGO ALFA VIP - A.S.</p>
+    </footer>
+
+    <script src="https://unpkg.com/@formspree/ajax@1"></script>
+
+    <script>
+        const formElement = document.getElementById('alfa-form');
+        const btn = document.getElementById('submit-btn');
+
+        formElement.addEventListener('submit', function(ev) {
+            ev.preventDefault();
+            btn.innerHTML = "VALIDANDO ACCESO...";
             btn.disabled = true;
 
-            const data = new FormData(form);
+            const data = new FormData(formElement);
 
-            // ENVIAMOS POR FETCH (MODO SILENCIOSO)
-            fetch("https://formspree.io/f/mbdpqqpv", {
-                method: "POST",
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    // SI TODO SALE BIEN, MANDAMOS AL USUARIO A TU LINK
-                    // ¡REEMPLAZA ESTE LINK POR EL TUYO!
-                    window.location.href = "https://TU_LINK_DE_HOTMART_O_PDF.com";
-                } else {
-                    alert("Error en el envío. Intenta de nuevo.");
+            formspree.sendForm({
+                formId: 'mbdpqqpv',
+                data: data,
+                onSuccess: function() {
+                    // PON AQUÍ TU LINK DE HOTMART O EL PDF
+                    window.location.href = "https://pay.hotmart.com/TU_LINK"; 
+                },
+                onError: function() {
+                    btn.innerHTML = "ERROR - REINTENTAR";
                     btn.disabled = false;
-                    btn.innerHTML = "Acceder al Manifiesto";
+                    alert("Hubo un error. Intenta de nuevo.");
                 }
-            }).catch(error => {
-                alert("Error de conexión.");
-                btn.disabled = false;
-                btn.innerHTML = "Acceder al Manifiesto";
             });
         });
     </script>
