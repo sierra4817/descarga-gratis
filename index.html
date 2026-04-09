@@ -13,7 +13,7 @@
             --blanco-nitido: #ffffff;
             --oro-gradiente: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 25%, #fcf6ba 50%, #bf953f 75%, #aa771c 100%);
         }
-        body { font-family: 'Roboto', sans-serif; background-color: var(--negro-absoluto); color: #f0f0f0; margin: 0; text-align: center; line-height: 1.7; }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--negro-absoluto); color: #f0f0f0; margin: 0; text-align: center; line-height: 1.7; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; color: var(--blanco-nitido); }
         
         .hero { padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop'); background-size: cover; border-bottom: 3px solid var(--oro-real); }
@@ -22,15 +22,14 @@
         .optin-container { max-width: 450px; margin: 30px auto; background: rgba(255,255,255,0.05); padding: 30px; border: 1px solid var(--oro-real); backdrop-filter: blur(10px); }
         input { width: 100%; padding: 15px; margin-bottom: 15px; background: #111; border: 1px solid #333; color: white; box-sizing: border-box; }
         
-        /* BOTÓN MEJORADO Y CENTRADO */
+        /* ESTILO DEL BOTÓN */
         .cta-btn { 
-            display: block; 
+            display: inline-block; 
             width: 100%; 
-            max-width: 300px; 
-            margin: 0 auto; 
+            max-width: 280px; 
             background: var(--oro-gradiente); 
-            color: #000; 
-            padding: 20px; 
+            color: #000 !important; 
+            padding: 18px; 
             text-decoration: none; 
             font-weight: 700; 
             font-family: 'Oswald', sans-serif; 
@@ -38,22 +37,25 @@
             cursor: pointer; 
             text-transform: uppercase;
             transition: transform 0.3s ease;
+            box-sizing: border-box;
         }
-        .cta-btn:hover { transform: scale(1.03); }
+        .cta-btn:hover { transform: scale(1.05); }
 
-        .section { padding: 80px 20px; max-width: 900px; margin: 0 auto; }
+        .section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
         .card { background: #050505; padding: 30px; border: 1px solid #1a1a1a; margin-bottom: 20px; }
         
-        /* SECCIÓN COMPRAR CENTRADA */
+        /* CONTENEDOR DE VENTA CENTRADO FORZOSO */
         #comprar { 
-            margin-top: 50px; 
-            padding: 40px; 
+            margin-top: 40px; 
+            padding: 40px 20px; 
             border: 2px solid var(--oro-real); 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            justify-content: center;
+            text-align: center;
         }
+
+        .btn-wrapper { width: 100%; display: flex; justify-content: center; }
 
         footer { padding: 40px; color: #555; font-size: 0.8rem; }
     </style>
@@ -68,7 +70,9 @@
             <form id="form-alfa">
                 <input type="text" name="name" placeholder="Tu Nombre" required>
                 <input type="email" name="email" placeholder="Tu Email" required>
-                <button type="submit" id="btn-submit" class="cta-btn">Acceder Gratis Ahora</button>
+                <div class="btn-wrapper">
+                    <button type="submit" id="btn-submit" class="cta-btn">Acceder Gratis Ahora</button>
+                </div>
             </form>
         </div>
     </header>
@@ -83,8 +87,10 @@
             <h2 style="margin-top:0;">¿QUIERES MÁS?</h2>
             <p>Domina tu mente con los <b>Protocolos de Sabiduría Estoica</b>. El complemento táctico para el 1%.</p>
             <br>
-            <a href="https://go.hotmart.com/R105307128Q" class="cta-btn">Adquirir Protocolo VIP</a>
-            <p style="font-size:0.7rem; margin-top:10px;">Garantía de 7 días • 100% Calificaciones Positivas</p>
+            <div class="btn-wrapper">
+                <a href="https://go.hotmart.com/R105307128Q" class="cta-btn">Adquirir Protocolo VIP</a>
+            </div>
+            <p style="font-size:0.7rem; margin-top:15px; opacity: 0.7;">Garantía de 7 días • 100% Calificaciones Positivas</p>
         </div>
     </main>
 
@@ -109,7 +115,7 @@
                 window.location.replace(ebookLink);
             });
 
-            setTimeout(() => { window.location.replace(ebookLink); }, 4000);
+            setTimeout(() => { window.location.replace(ebookLink); }, 4500);
         });
     </script>
 </body>
