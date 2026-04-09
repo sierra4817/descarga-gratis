@@ -1,242 +1,51 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
+/* =========================
+   ORO PREMIUM REAL (FIX COMPLETO)
+========================= */
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --negro: #000;
-  --negro-card: #080808;
-  --gris: #888;
-  --gris-claro: #bbb;
-  --blanco: #fff;
-}
-
-/* ORO COMPATIBLE REAL */
-@keyframes oroMove {
+@keyframes oroPremium {
   0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  100% { background-position: 120% 50%; }
 }
 
 .oro {
   background: linear-gradient(
-    90deg,
+    110deg,
     #bf953f 0%,
-    #fcf6ba 20%,
-    #b38728 40%,
-    #fbf5e6 60%,
-    #aa771c 80%
+    #fcf6ba 18%,
+    #b38728 35%,
+    #fbf5e6 55%,
+    #aa771c 75%
   );
-  background-size: 200% auto;
+  background-size: 250% auto;
 
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: oroMove 4s linear infinite;
+  animation: oroPremium 6s linear infinite;
 
+  /* brillo elegante (no exagerado) */
   text-shadow:
-    0 0 6px rgba(212,175,55,0.5),
-    0 0 12px rgba(212,175,55,0.3);
+    0 0 4px rgba(212,175,55,0.25),
+    0 0 10px rgba(212,175,55,0.15);
 }
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
+/* =========================
+   MICRO MEJORAS LUJO (SIN CAMBIAR DISEÑO)
+========================= */
 
-body{
-  font-family:'DM Sans',sans-serif;
-  background:#000;
-  color:#bbb;
+.hero-title {
+  letter-spacing: 0.06em;
 }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:40px 20px;
-  background:
-  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.95)),
-  url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070') center/cover;
+.cta-btn {
+  box-shadow:
+    0 0 20px rgba(212,175,55,0.25),
+    0 0 40px rgba(212,175,55,0.15);
 }
 
-.hero-title{
-  font-family:'Bebas Neue';
-  font-size:4rem;
-  line-height:1;
+/* FIX INPUT FOCUS MÁS PREMIUM */
+.vault-form input:focus {
+  border-bottom-color: #fcf6ba;
+  box-shadow: 0 8px 20px rgba(212,175,55,0.12);
 }
-
-.hero-sub{
-  font-family:'Playfair Display';
-  font-style:italic;
-  color:#888;
-  margin:20px 0;
-}
-
-/* BOTÓN */
-.cta-btn{
-  padding:18px 40px;
-  background:linear-gradient(135deg,#bf953f,#fcf6ba,#b38728);
-  background-size:200% 200%;
-  animation:oroMove 4s linear infinite;
-  color:#000;
-  font-family:'Bebas Neue';
-  letter-spacing:2px;
-  text-decoration:none;
-  box-shadow:0 0 20px rgba(212,175,55,0.4);
-  transition:.3s;
-}
-.cta-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 35px rgba(212,175,55,0.7);
-}
-
-/* SECTION */
-.section{
-  padding:80px 20px;
-  max-width:1000px;
-  margin:auto;
-  text-align:center;
-}
-
-/* CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-.card{
-  background:#080808;
-  padding:30px;
-  transition:.3s;
-}
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 20px rgba(212,175,55,0.1);
-}
-
-/* VAULT */
-.vault{
-  text-align:center;
-  padding:80px 20px;
-  background:#020202;
-}
-
-/* MOCKUP */
-.book{
-  width:180px;
-  height:260px;
-  margin:30px auto;
-  background:#111;
-  border:1px solid #b38728;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-
-/* FORM */
-form{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:15px;
-}
-input{
-  width:300px;
-  padding:12px;
-  background:none;
-  border:none;
-  border-bottom:1px solid #333;
-  color:#fff;
-}
-input:focus{
-  border-bottom:1px solid #fcf6ba;
-}
-
-button{
-  padding:15px 30px;
-  background:linear-gradient(135deg,#bf953f,#fcf6ba,#b38728);
-  color:#000;
-  border:none;
-  font-family:'Bebas Neue';
-  cursor:pointer;
-  box-shadow:0 0 20px rgba(212,175,55,0.4);
-}
-button:hover{
-  transform:scale(1.05);
-}
-
-/* FOOTER */
-footer{
-  padding:40px;
-  text-align:center;
-  color:#444;
-  font-size:12px;
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="hero">
-<h1 class="hero-title oro">CÓDIGO ALFA VIP</h1>
-<p class="hero-sub">El Manifiesto del 1%</p>
-<a href="#vault" class="cta-btn">Acceso Privado Inmediato</a>
-</section>
-
-<!-- SECTION -->
-<div class="section">
-<p>La mayoría vive reaccionando. El 1% crea su realidad.</p>
-
-<div class="grid">
-<div class="card">
-<h3 class="oro">Mentalidad</h3>
-<p>Reprograma tu mente para dominar.</p>
-</div>
-<div class="card">
-<h3 class="oro">Disciplina</h3>
-<p>Elimina la debilidad mental.</p>
-</div>
-<div class="card">
-<h3 class="oro">Dinero</h3>
-<p>Haz que el dinero te obedezca.</p>
-</div>
-<div class="card">
-<h3 class="oro">Presencia</h3>
-<p>Domina sin hablar.</p>
-</div>
-</div>
-</div>
-
-<!-- VAULT -->
-<section class="vault" id="vault">
-<h2 class="oro">Accede al Manifiesto</h2>
-
-<div class="book">
-<div class="oro">CÓDIGO ALFA</div>
-</div>
-
-<form action="#">
-<input type="text" placeholder="Nombre" required>
-<input type="email" placeholder="Email" required>
-<button type="submit">Entrar al 1%</button>
-</form>
-
-</section>
-
-<footer>
-<p>© 2026 Código Alfa VIP</p>
-</footer>
-
-</body>
-</html>
