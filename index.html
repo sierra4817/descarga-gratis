@@ -7,22 +7,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* PALETA DORADO NIVEL DIOS */
-            --oro-puro: #FFD700; /* Oro brillante base */
-            --oro-metalico: #C5A059; /* Oro viejo para contraste */
-            --oro-blanco: #FFFACD; /* Para brillos extremos */
-            --oro-sombra: #967B45; /* Oro oscuro para profundidad */
+            --oro-puro: #FFD700;
+            --oro-metalico: #C5A059;
+            --oro-blanco: #FFFACD;
+            --oro-sombra: #967B45;
             --negro-absoluto: #000000;
             --gris-oscuro: #0a0a0a;
             --blanco: #ffffff;
-            --texto: #e0e0e0;
+            --texto: #f5f5f5; /* Texto ligeramente más blanco para mayor nitidez */
             
-            /* Degradado Metálico Complejo */
             --gradient-oro: linear-gradient(135deg, #bf953f 0%, #fcf6ba 20%, #b38728 40%, #fcf6ba 60%, #bf953f 80%, #aa771c 100%);
             --gradient-oro-btn: linear-gradient(45deg, #aa771c 0%, #fcf6ba 50%, #aa771c 100%);
         }
 
-        /* Suavizado de scroll */
         html { scroll-behavior: smooth; }
 
         body {
@@ -31,19 +28,21 @@
             color: var(--texto);
             margin: 0;
             line-height: 1.7;
+            /* Suavizado de fuente para máxima nitidez */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         h1, h2, h3 {
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             color: var(--blanco);
             text-wrap: balance;
-            /* Sombra de texto dorada sutil para h1 y h2 */
-            text-shadow: 0 2px 4px rgba(197, 160, 89, 0.3);
+            /* Sombra reducida para evitar el efecto de borde difuminado */
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
         }
 
-        /* Hero Section - Aumentado el brillo y la sombra dorada inferior */
         .hero {
             padding: 140px 20px;
             text-align: center;
@@ -51,23 +50,19 @@
                         url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            /* Borde inferior con degradado metálico */
-            border-bottom: 3px solid transparent;
-            border-image: var(--gradient-oro) 1;
-            /* Resplandor dorado inferior */
-            box-shadow: 0 10px 50px rgba(197, 160, 89, 0.2);
+            border-bottom: 3px solid var(--oro-metalico);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
-        /* Dorado Metálico para texto específico */
+        /* Dorado con degradado, pero con filtro de nitidez */
         .gold {
             background: var(--gradient-oro);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            color: transparent;
             font-weight: 700;
-            /* Brillo externo en el texto dorado */
-            filter: drop-shadow(0 0 5px rgba(252, 246, 186, 0.5));
+            /* Eliminamos drop-shadow difuminado en textos pequeños */
+            filter: brightness(1.1);
         }
 
         .headline {
@@ -75,140 +70,88 @@
             margin: 0;
             line-height: 1.1;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .subheadline {
             font-size: 1.4rem;
             max-width: 900px;
             margin: 25px auto 45px;
-            font-weight: 300;
+            font-weight: 400; /* Un poco más de peso para lectura clara */
+            color: #ffffff;
         }
 
-        /* Botón CTA - Degradado metálico con efecto de brillo al pasar el mouse */
         .cta-btn {
             display: inline-block;
             background: var(--gradient-oro-btn);
-            color: black;
+            color: #000000;
             padding: 22px 55px;
             text-decoration: none;
             font-weight: 700;
             font-family: 'Oswald', sans-serif;
             font-size: 1.3rem;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             border-radius: 2px;
-            /* Super resplandor dorado */
-            box-shadow: 0 0 30px rgba(197, 160, 89, 0.6), inset 0 0 10px rgba(255, 250, 205, 0.5);
+            box-shadow: 0 5px 20px rgba(197, 160, 89, 0.4);
             text-transform: uppercase;
-            border: 1px solid var(--oro-blanco);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             position: relative;
-            overflow: hidden;
-        }
-
-        /* Efecto de 'barrido de luz' en el botón */
-        .cta-btn::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(to bottom right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
-            transform: rotate(45deg);
-            transition: all 0.6s ease;
-            opacity: 0;
         }
 
         .cta-btn:hover {
-            transform: translateY(-5px) scale(1.03);
-            background: var(--gradient-oro); /* Invertir degradado */
-            box-shadow: 0 15px 50px rgba(197, 160, 89, 0.8), inset 0 0 15px rgba(255, 250, 205, 0.7);
-            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.6);
+            filter: brightness(1.1);
         }
 
-        .cta-btn:hover::after {
-            opacity: 1;
-            left: 100%;
-            top: 100%;
-        }
-
-        /* Secciones */
         .section {
             padding: 100px 20px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        /* Caja de Cita - Borde y resplandor intensificados */
         .quote-box {
             background: var(--gris-oscuro);
             padding: 50px;
-            /* Borde izquierdo con degradado metálico intensificado */
-            border-left: 5px solid transparent;
-            border-image: linear-gradient(to bottom, #fcf6ba, #aa771c) 1;
+            border-left: 5px solid var(--oro-metalico);
             font-style: italic;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 80px;
-            color: var(--blanco);
-            /* Sombra proyectada dorada */
-            box-shadow: 15px 15px 40px rgba(0,0,0,0.7), 0 0 20px rgba(197, 160, 89, 0.15);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            color: #ffffff;
+            /* Sombra sólida para no ensuciar el texto */
+            box-shadow: 20px 20px 0px rgba(197, 160, 89, 0.05);
         }
 
-        /* Grid de Capítulos */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 35px;
         }
 
-        /* Tarjetas - Efecto de borde dorado neón al pasar el mouse */
         .card {
-            background: #080808; /* Más negro */
+            background: #080808;
             padding: 45px;
-            border: 1px solid #1a1a1a;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            display: flex;
-            flex-direction: column;
-            position: relative;
+            border: 1px solid #222;
+            transition: all 0.3s ease;
         }
 
         .card:hover { 
-            /* Borde dorado metálico */
-            border-color: transparent;
-            border-image: var(--gradient-oro) 1;
-            transform: translateY(-8px);
-            background: #101010;
-            /* Resplandor externo dorado */
-            box-shadow: 0 15px 40px rgba(197, 160, 89, 0.25);
-        }
-        
-        /* Brillo sutil en la esquina superior de la tarjeta al hacer hover */
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 0% 0%, rgba(252, 246, 186, 0.1) 0%, rgba(0,0,0,0) 50%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        
-        .card:hover::before {
-            opacity: 1;
+            border-color: var(--oro-metalico);
+            background: #111;
         }
 
         .card h3 { 
-            /* Título de la tarjeta con dorado metálico */
-            background: var(--gradient-oro);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
+            color: var(--oro-puro); 
             margin-top: 0;
             font-size: 1.5rem;
-            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.5));
+            letter-spacing: 1px;
         }
 
-        /* Lista de Puntos Clave */
+        .card p {
+            font-size: 1.05rem;
+            color: #d1d1d1;
+        }
+
         .feature-list {
             list-style: none;
             padding: 0;
@@ -220,60 +163,37 @@
             border-bottom: 1px solid #1a1a1a;
             display: flex;
             align-items: flex-start;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            color: #ffffff;
         }
 
-        /* Checkmark dorado brillante */
         .feature-list li::before {
             content: "✓";
             color: var(--oro-puro);
             margin-right: 20px;
-            font-weight: bold;
-            font-size: 1.3rem;
-            /* Brillo en el checkmark */
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            font-weight: 900;
         }
 
-        /* Caja de Compra Final - Ultra Dorada */
         .final-buy-box {
             text-align: center; 
             margin-top: 80px; 
             padding: 70px 30px; 
             background: #050505; 
-            /* Borde completo metálico degradado */
-            border: 2px solid transparent;
-            border-image: var(--gradient-oro) 1;
-            /* Gran resplandor dorado de fondo */
-            box-shadow: 0 0 60px rgba(197, 160, 89, 0.3), inset 0 0 20px rgba(197, 160, 89, 0.1);
-            position: relative;
+            border: 2px solid var(--oro-metalico);
+            box-shadow: 0 0 40px rgba(0,0,0,1);
         }
-        
-        /* Brillo central de fondo en la caja de compra */
-        .final-buy-box::before {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 80%; height: 80%;
-            background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, rgba(0,0,0,0) 70%);
-            z-index: 0;
-        }
-        
-        .final-buy-box * { position: relative; z-index: 1; }
 
         footer {
             padding: 80px 20px;
             text-align: center;
-            border-top: 1px solid transparent;
-            border-image: linear-gradient(to right, transparent, var(--oro-sombra), transparent) 1;
+            border-top: 1px solid #222;
             font-size: 0.9rem;
-            color: #777;
-            background: #050505;
+            color: #888;
         }
 
         @media (max-width: 600px) {
             .section { padding: 60px 20px; }
-            .quote-box { padding: 30px; font-size: 1.1rem; }
-            .hero { padding: 100px 20px; }
+            .quote-box { padding: 30px; font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -291,7 +211,6 @@
         </div>
 
         <h2 style="text-align: center; margin-bottom: 50px;">La Hoja de Ruta Táctica</h2>
-        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px;">Este libro deconstruye los mitos que mantienen a los hombres débiles y presenta los pilares de la élite mundial:</p>
         
         <div class="grid">
             <div class="card">
@@ -314,18 +233,18 @@
 
         <h2 style="margin-top: 100px; text-align: center;">Lo que vas a dominar</h2>
         <ul class="feature-list">
-            <li><span><strong>Monopolio Personal:</strong> Deja de ser una mercancía intercambiable y haz que la competencia sea irrelevante.</span></li>
-            <li><span><strong>Autoimagen de Élite:</strong> Ajusta tu termostato mental para que el éxito sea el resultado inevitable de tu identidad.</span></li>
-            <li><span><strong>Silencio Estratégico:</strong> Aprende a ocupar espacio en la mente ajena sin decir una sola palabra.</span></li>
-            <li><span><strong>Quemar las Naves:</strong> Elimina mentalmente la opción del fracaso y comprométete con tu victoria absoluta.</span></li>
+            <li><strong>Monopolio Personal:</strong> Deja de ser una mercancía intercambiable y haz que la competencia sea irrelevante.</li>
+            <li><strong>Autoimagen de Élite:</strong> Ajusta tu termostato mental para que el éxito sea el resultado inevitable de tu identidad.</li>
+            <li><strong>Silencio Estratégico:</strong> Aprende a ocupar espacio en la mente ajena sin decir una sola palabra.</li>
+            <li><strong>Quemar las Naves:</strong> Elimina mentalmente la opción del fracaso y comprométete con tu victoria absoluta.</li>
         </ul>
 
         <div class="final-buy-box" id="comprar">
             <h2 class="gold">¿ESTÁS LISTO PARA EL SIGUIENTE NIVEL?</h2>
-            <p style="font-size: 1.2rem;">El 1% no busca superar a la competencia; busca hacerla irrelevante.</p>
+            <p style="font-size: 1.3rem; color: #fff;">El 1% no busca superar a la competencia; busca hacerla irrelevante.</p>
             <br>
             <a href="TU_LINK_HOTMART" class="cta-btn">Descargar Código Alfa VIP</a>
-            <p style="margin-top: 25px; font-size: 0.8rem; color: #555;">Acceso inmediato tras la compra. Garantía de 7 días.</p>
+            <p style="margin-top: 25px; font-size: 0.9rem; color: #777;">Acceso inmediato tras la compra. Garantía de 7 días.</p>
         </div>
     </main>
 
@@ -336,4 +255,3 @@
 
 </body>
 </html>
-
