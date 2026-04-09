@@ -1,507 +1,162 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --negro: #000;
-  --negro-card: #080808;
-  --gris: #888;
-  --gris-claro: #bbb;
-  --blanco: #fff;
-  --oro-1: #bf953f;
-  --oro-2: #fcf6ba;
-  --oro-3: #b38728;
-  --oro-4: #fbf5e6;
-  --oro-5: #aa771c;
-}
 
-@keyframes oro {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
+/* =========================
+   ORO NIVEL DIOS (REALISTA)
+========================= */
+@keyframes oroFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 120% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+@keyframes oroShine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
 .oro {
-  background: linear-gradient(135deg, var(--oro-1) 0%, var(--oro-2) 25%, var(--oro-3) 50%, var(--oro-4) 75%, var(--oro-5) 100%);
+  background:
+    linear-gradient(120deg,
+      #bf953f 0%,
+      #fcf6ba 20%,
+      #b38728 40%,
+      #fbf5e6 60%,
+      #aa771c 80%
+    );
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: oro 3s ease-in-out infinite;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes lineGrow {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background-color: var(--negro);
-  color: var(--gris-claro);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-.gold-line {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--oro-1), var(--oro-2), var(--oro-1), transparent);
-  transform-origin: left;
-  animation: lineGrow 1.2s ease forwards;
-}
-
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  align-items: center;
-  justify-items: center;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.92) 100%),
-    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
-  text-align: center;
-  padding: 40px 24px 60px;
+  animation: oroFlow 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(212,175,55,0.55));
   position: relative;
 }
 
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  animation: fadeUp 1s ease both;
-}
-
-.hero-eyebrow {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--oro-1);
-  filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));
-  animation: fadeIn 1s ease 0.2s both;
-}
-
-.hero-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(4.5rem, 12vw, 9rem);
-  line-height: 0.9;
-  letter-spacing: 0.04em;
-  filter: drop-shadow(0 0 20px rgba(212,175,55,0.35));
-  animation: fadeUp 1s ease 0.3s both;
-}
-
-.hero-divider {
-  width: 60px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--oro-2), transparent);
-  animation: fadeIn 1s ease 0.5s both;
-}
-
-.hero-sub {
-  font-size: 1.05rem;
-  max-width: 620px;
-  font-weight: 300;
-  color: #aaa;
-  font-style: italic;
-  font-family: 'Playfair Display', serif;
-  animation: fadeUp 1s ease 0.5s both;
-}
-
-.cta-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 18px 50px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.15em;
-  text-decoration: none;
-  color: #000;
-  background: linear-gradient(135deg, var(--oro-1) 0%, var(--oro-2) 50%, var(--oro-3) 100%);
-  background-size: 200% 200%;
-  animation: oro 3s ease-in-out infinite, fadeUp 1s ease 0.7s both;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 0 30px rgba(212,175,55,0.3);
-}
-.cta-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 50px rgba(212,175,55,0.6);
-}
-
-.hero-scroll-hint {
-  padding-bottom: 10px;
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #444;
-  animation: fadeIn 2s ease 1.5s both;
-}
-.hero-scroll-hint span {
-  display: block;
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--oro-1), transparent);
-  margin: 8px auto 0;
-}
-
-/* INTRO */
-.section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 100px 24px;
-}
-
-.section-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--oro-1);
-  margin-bottom: 14px;
-  text-align: center;
-}
-
-.section-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  letter-spacing: 0.06em;
-  text-align: center;
-  color: var(--blanco);
-  margin-bottom: 16px;
-}
-
-blockquote.intro-quote {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.25rem;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 80px;
-  color: #999;
-  padding: 0 24px;
-  border-left: none;
-  position: relative;
-}
-blockquote.intro-quote::before {
-  content: '"';
-  font-size: 6rem;
-  line-height: 0;
+/* Brillo que cruza el texto */
+.oro::after {
+  content: "";
   position: absolute;
-  top: 28px;
-  left: -10px;
-  color: var(--oro-3);
-  opacity: 0.25;
-  font-family: 'Playfair Display', serif;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(255,255,255,0.4) 50%,
+    transparent 60%
+  );
+  animation: oroShine 3.5s linear infinite;
+  pointer-events: none;
 }
 
-/* CAPÍTULOS */
-.chapters-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2px;
-  background: linear-gradient(135deg, #1a1500, #0a0a0a);
-  border: 1px solid #1c1a00;
+/* =========================
+   GLOW AMBIENTAL GLOBAL
+========================= */
+body::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle at 50% 30%, rgba(212,175,55,0.08), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.chapter-card {
-  background: var(--negro-card);
-  padding: 48px 40px;
+/* =========================
+   BOTÓN QUE VENDE
+========================= */
+@keyframes pulseGold {
+  0% { box-shadow: 0 0 20px rgba(212,175,55,0.25); }
+  50% { box-shadow: 0 0 45px rgba(212,175,55,0.6); }
+  100% { box-shadow: 0 0 20px rgba(212,175,55,0.25); }
+}
+
+.cta-btn,
+.vault-form button {
+  animation: oroFlow 4s ease-in-out infinite, pulseGold 2.5s ease-in-out infinite;
   position: relative;
-  transition: background 0.3s;
   overflow: hidden;
 }
-.chapter-card::after {
-  content: '';
+
+.cta-btn::after,
+.vault-form button::after {
+  content: "";
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--oro-1), transparent);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-}
-.chapter-card:hover { background: #0c0b00; }
-.chapter-card:hover::after { transform: scaleX(1); }
-
-.chapter-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.35em;
-  color: var(--oro-1);
-  opacity: 0.7;
-  margin-bottom: 20px;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+  transition: 0.5s;
 }
 
-.chapter-card h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.6rem;
-  letter-spacing: 0.08em;
-  text-align: left;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  color: var(--blanco);
+.cta-btn:hover::after,
+.vault-form button:hover::after {
+  left: 120%;
 }
 
-.chapter-card p {
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: #777;
-}
-
-/* VAULT / CTA */
-.vault-section {
-  background: #020202;
-  border-top: 1px solid #111;
-  border-bottom: 1px solid #111;
-  padding: 100px 24px;
-}
-.vault-inner {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.vault-inner h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  letter-spacing: 0.06em;
-  color: var(--blanco);
-  margin-bottom: 20px;
-}
-
-.vault-inner p {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  color: #777;
-  margin-bottom: 50px;
-  font-size: 1.05rem;
+/* =========================
+   MOCKUP 3D PREMIUM
+========================= */
+@keyframes floatBook {
+  0% { transform: translateY(0px) rotateY(-6deg); }
+  50% { transform: translateY(-10px) rotateY(6deg); }
+  100% { transform: translateY(0px) rotateY(-6deg); }
 }
 
 .book-mockup {
-  width: 200px;
-  height: 280px;
-  margin: 0 auto 50px;
-  background: linear-gradient(135deg, #1a1200, #0d0d00);
-  border: 1px solid var(--oro-3);
-  box-shadow: 0 0 40px rgba(212,175,55,0.2), 8px 8px 0 rgba(180,140,0,0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  transform-style: preserve-3d;
+  animation: floatBook 6s ease-in-out infinite;
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.8),
+    0 0 40px rgba(212,175,55,0.25);
+}
+
+/* =========================
+   INPUTS PREMIUM UX
+========================= */
+.vault-form input:focus {
+  border-bottom-color: #fcf6ba;
+  box-shadow: 0 10px 20px rgba(212,175,55,0.15);
+}
+
+/* =========================
+   HOVER CARDS MÁS PRO
+========================= */
+.chapter-card:hover {
+  background: #0c0b00;
+  box-shadow: 0 0 25px rgba(212,175,55,0.08);
+  transform: translateY(-4px);
+}
+
+/* =========================
+   MICRO DETALLE LUJO
+========================= */
+.section-title {
   position: relative;
 }
-.book-mockup::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 6px;
-  background: linear-gradient(to bottom, var(--oro-1), var(--oro-3));
-  opacity: 0.6;
-}
-.book-mockup .book-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  text-align: center;
-  padding: 0 20px;
-  line-height: 1.1;
-}
-.book-mockup .book-sub {
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--oro-1);
-  opacity: 0.8;
-}
-.book-mockup .book-line {
-  width: 40px;
+
+.section-title::after {
+  content: "";
+  display: block;
+  margin: 12px auto 0;
+  width: 60px;
   height: 1px;
-  background: var(--oro-3);
-  opacity: 0.5;
+  background: linear-gradient(90deg, transparent, #bf953f, transparent);
 }
 
-.vault-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-}
-.vault-form input {
-  width: 100%;
-  max-width: 420px;
-  padding: 14px 0;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #2a2a1a;
-  color: var(--blanco);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.3s;
-  text-align: center;
-}
-.vault-form input::placeholder { color: #444; letter-spacing: 0.1em; }
-.vault-form input:focus { border-bottom-color: var(--oro-1); }
-
-.vault-form button {
-  margin-top: 10px;
-  padding: 16px 50px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1rem;
-  letter-spacing: 0.2em;
-  border: none;
-  cursor: pointer;
-  color: #000;
-  background: linear-gradient(135deg, var(--oro-1), var(--oro-2), var(--oro-3));
-  background-size: 200% 200%;
-  animation: oro 3s ease-in-out infinite;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 0 20px rgba(212,175,55,0.25);
-}
-.vault-form button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(212,175,55,0.5);
+/* =========================
+   SCROLL SUAVE
+========================= */
+html {
+  scroll-behavior: smooth;
 }
 
-.vault-form .form-note {
-  font-size: 0.78rem;
-  color: #444;
-  letter-spacing: 0.05em;
-}
-
-/* FOOTER */
-footer {
-  padding: 60px 24px;
-  text-align: center;
-  border-top: 1px solid #0d0d0d;
-}
-footer p {
-  font-size: 0.75rem;
-  color: #333;
-  letter-spacing: 0.15em;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-}
-footer .footer-brand {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.2rem;
-  letter-spacing: 0.3em;
-  color: var(--oro-1);
-  opacity: 0.5;
-  margin-bottom: 16px;
-}
-
-@media (max-width: 600px) {
-  .chapter-card { padding: 36px 28px; }
-  .chapters-grid { gap: 1px; }
-  .book-mockup { width: 160px; height: 230px; }
-  .book-mockup .book-title { font-size: 1.3rem; }
-}
 </style>
-</head>
-<body>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <p class="hero-eyebrow">El 1% no compite — domina</p>
-    <h1 class="hero-title oro">CÓDIGO<br>ALFA VIP</h1>
-    <div class="hero-divider"></div>
-    <p class="hero-sub">El manifiesto de poder y la hoja de ruta táctica para el hombre que ha decidido cruzar la línea hacia la excelencia absoluta.</p>
-    <a href="#vault" class="cta-btn">Descargar el Manifiesto del 1%</a>
-  </div>
-  <div class="hero-scroll-hint">
-    Desplazar
-    <span></span>
-  </div>
-</section>
-
-<div class="gold-line"></div>
-
-<!-- INTRO -->
-<div class="section">
-  <p class="section-label">El punto de partida</p>
-  <blockquote class="intro-quote">
-    La mayoría vive en silencio, compitiendo por las sobras, reaccionando al mundo en lugar de crearlo. Pero tú no eres la mayoría.
-  </blockquote>
-
-  <p class="section-label">Pilares del Dominio</p>
-  <h2 class="section-title" style="margin-bottom:40px;">El Sistema de los Cuatro Pilares</h2>
-
-  <div class="chapters-grid">
-    <div class="chapter-card">
-      <div class="chapter-num">Capítulo 01</div>
-      <h3>Mentalidad del 1%</h3>
-      <p>Reprograma tu mente para eliminar el miedo y la duda. Deja de ser un Participante que reacciona al destino y conviértete en el Arquitecto que lo diseña.</p>
-    </div>
-    <div class="chapter-card">
-      <div class="chapter-num">Capítulo 02</div>
-      <h3>Disciplina de Acero</h3>
-      <p>La motivación es una mentira volátil. Necesitas Ingeniería del Comportamiento para construir hábitos que te hagan ganar independientemente de cómo te sientas.</p>
-    </div>
-    <div class="chapter-card">
-      <div class="chapter-num">Capítulo 03</div>
-      <h3>Dinero que Obedece</h3>
-      <p>El dinero debe ser tu mejor soldado, nunca tu comandante. Aprende la psicología de la riqueza masiva y el poder de la soberanía personal.</p>
-    </div>
-    <div class="chapter-card">
-      <div class="chapter-num">Capítulo 04</div>
-      <h3>Presencia Ejecutiva</h3>
-      <p>El verdadero poder es silencioso. Domina el arte de entrar en una habitación y tomar la autoridad por derecho natural sin decir una sola palabra.</p>
-    </div>
-  </div>
-</div>
-
-<div class="gold-line"></div>
-
-<!-- VAULT / CTA -->
-<section class="vault-section" id="vault">
-  <div class="vault-inner">
-    <h2>¿Estás listo para <span class="oro">quemar las naves?</span></h2>
-    <p>La competencia es para los que no tienen identidad. El 1% lidera, define las reglas y crea su propio juego.</p>
-
-    <div class="book-mockup">
-      <div class="book-line"></div>
-      <div class="book-title oro">CÓDIGO<br>ALFA<br>VIP</div>
-      <div class="book-sub">El Manifiesto</div>
-      <div class="book-line"></div>
-    </div>
-
-    <form class="vault-form"
-          action="https://tusitio.us1.list-manage.com/subscribe/post?u=TU_ID&id=TU_LISTA"
-          method="POST">
-      <input type="text"  name="FNAME" placeholder="Tu nombre" required>
-      <input type="email" name="EMAIL" placeholder="Tu email"  required>
-      <div style="position:absolute;left:-5000px;" aria-hidden="true">
-        <input type="text" name="b_TU_ID_TU_LISTA" tabindex="-1" value="">
-      </div>
-      <button type="submit">Descargar Código Alfa VIP Ahora</button>
-      <p class="form-note">Acceso inmediato · Garantía de 7 días · Sin spam</p>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">Código Alfa VIP</div>
-  <p>&copy; 2026 Código Alfa VIP — Autor: Albert S.</p>
-  <p>No aceptes el guion de la mediocridad. Lidera o desaparece.</p>
-</footer>
-
-</body>
-</html>
