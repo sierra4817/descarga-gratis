@@ -156,10 +156,13 @@
             <p style="margin-bottom: 20px; font-weight: 700; letter-spacing: 1px;">DESCARGA EL MANIFIESTO GRATIS</p>
             
             <form action="https://formspree.io/f/mbdpqqpv" method="POST">
-                <input type="text" name="Nombre" placeholder="Tu Nombre Completo" required>
-                <input type="email" name="Email" placeholder="Tu Email Privado" required>
+                
+                <input type="hidden" name="_next" value="TU_LINK_AQUI">
                 
                 <input type="text" name="_gotcha" style="display:none">
+
+                <input type="text" name="Nombre" placeholder="Tu Nombre Completo" required>
+                <input type="email" name="Email" placeholder="Tu Email Privado" required>
                 
                 <button type="submit" class="cta-btn">Acceder al Manifiesto</button>
             </form>
