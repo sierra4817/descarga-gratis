@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --negro-fondo: #000000;
+            /* PALETA DE ORO PURO Y NITIDEZ */
+            --oro-celestial: #fcf6ba; 
+            --oro-real: #bf953f; 
+            --oro-profundo: #aa771c; 
+            --negro-absoluto: #000000;
+            --gris-premium: #0a0a0a;
+            --blanco-nitido: #ffffff;
             --texto-claro: #f0f0f0;
-            /* Degradado de oro con múltiples reflejos según la imagen */
+            
+            /* DEGRADADO METÁLICO NIVEL DIOS (Basado en tu imagen) */
             --oro-gradiente: linear-gradient(
                 to bottom, 
                 #fcf6ba 0%, 
@@ -20,14 +27,38 @@
             );
         }
 
+        html { scroll-behavior: smooth; }
+
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: var(--negro-fondo);
-            margin: 0;
+            background-color: var(--negro-absoluto);
             color: var(--texto-claro);
+            margin: 0;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* ESTILO DEL TÍTULO IGUAL A LA IMAGEN */
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--blanco-nitido);
+        }
+
+        /* HERO - IMPACTO TOTAL */
+        .hero {
+            padding: 150px 20px;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), 
+                        url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 3px solid transparent;
+            border-image: var(--oro-gradiente) 1;
+            box-shadow: 0 10px 50px rgba(191, 149, 63, 0.3);
+        }
+
+        /* TÍTULO IGUAL A LA IMAGEN */
         .titulo-alfa {
             font-family: 'Oswald', sans-serif;
             font-size: clamp(3rem, 10vw, 6rem);
@@ -36,37 +67,148 @@
             text-align: center;
             margin: 0;
             letter-spacing: -1px;
-            
-            /* Efecto Metálico */
             background: var(--oro-gradiente);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            
-            /* Sombra para dar relieve y nitidez */
             filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.8));
-            
-            /* Ajuste de nitidez */
-            -webkit-font-smoothing: antialiased;
+            line-height: 1.1;
         }
 
-        .hero {
-            padding: 150px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
-            border-bottom: 2px solid #bf953f;
+        .gold-span {
+            color: var(--oro-real);
+            font-weight: 700;
         }
 
         .subheadline {
-            font-size: 1.2rem;
-            color: #bf953f;
-            margin-top: 10px;
-            letter-spacing: 3px;
+            font-size: 1.5rem;
+            max-width: 900px;
+            margin: 25px auto 45px;
+            font-weight: 300;
+            color: var(--blanco-nitido);
             text-transform: uppercase;
-            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        /* BOTÓN NIVEL DIOS */
+        .cta-btn {
+            display: inline-block;
+            background: var(--oro-gradiente);
+            color: #000;
+            padding: 22px 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 2px;
+            box-shadow: 0 0 30px rgba(191, 149, 63, 0.5);
+            text-transform: uppercase;
+            border: 1px solid var(--oro-celestial);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 60px rgba(191, 149, 63, 0.8);
+            filter: brightness(1.2);
+        }
+
+        /* SECCIONES */
+        .section {
+            padding: 100px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .quote-box {
+            background: var(--gris-premium);
+            padding: 50px;
+            border-left: 6px solid transparent;
+            border-image: linear-gradient(to bottom, var(--oro-celestial), var(--oro-profundo)) 1;
+            font-style: italic;
+            font-size: 1.6rem;
+            margin-bottom: 80px;
+            color: var(--blanco-nitido);
+            box-shadow: 15px 15px 50px rgba(0,0,0,0.8);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: #050505;
+            padding: 45px;
+            border: 1px solid #1a1a1a;
+            transition: 0.4s;
+        }
+
+        .card:hover { 
+            border-color: var(--oro-real);
+            transform: translateY(-10px);
+            background: #0a0a0a;
+            box-shadow: 0 15px 40px rgba(191, 149, 63, 0.2);
+        }
+
+        .card h3 { 
+            background: var(--oro-gradiente);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.6rem;
+            margin-top: 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 120px 0;
+        }
+
+        .feature-list li {
+            padding: 20px 0;
+            border-bottom: 1px solid #1a1a1a;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.2rem;
+            color: var(--blanco-nitido);
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--oro-celestial);
+            margin-right: 25px;
+            font-weight: 900;
+            text-shadow: 0 0 10px var(--oro-real);
+        }
+
+        .final-buy-box {
+            text-align: center; 
+            margin-top: 100px; 
+            padding: 80px 40px; 
+            background: #000; 
+            border: 2px solid transparent;
+            border-image: var(--oro-gradiente) 1;
+            box-shadow: 0 0 60px rgba(191, 149, 63, 0.2);
+        }
+
+        footer {
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+            font-size: 0.9rem;
+            color: #555;
+            background: #050505;
+        }
+
+        @media (max-width: 600px) {
+            .titulo-alfa { font-size: 3rem; }
+            .subheadline { font-size: 1.1rem; }
+            .quote-box { padding: 30px; font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -74,8 +216,56 @@
 
     <header class="hero">
         <h1 class="titulo-alfa">CÓDIGO ALFA VIP</h1>
-        <p class="subheadline">El Manifiesto del 1%</p>
+        <p class="subheadline">La Psicología del 1% que <span class="gold-span">no compite, lidera</span></p>
+        <a href="#comprar" class="cta-btn">Unirse al Círculo</a>
     </header>
+
+    <main class="section">
+        <div class="quote-box">
+            "Al hombre moderno se le ha vendido una mentira: que debe disculparse por su ambición... La mayoría vive en silencio, compitiendo por las sobras."
+        </div>
+
+        <h2 style="text-align: center; margin-bottom: 60px;">La Hoja de Ruta Táctica</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Capítulo 1: El Despertar</h3>
+                <p>Quema el mapa que te dieron al nacer. Pasa de ser un "Participante" que reacciona a ser un "Arquitecto" que diseña su realidad.</p>
+            </div>
+            <div class="card">
+                <h3>Capítulo 2: Disciplina</h3>
+                <p>La motivación es una mentira. Necesitas Ingeniería del Comportamiento y rituales de mañana en "Modo Ofensivo".</p>
+            </div>
+            <div class="card">
+                <h3>Capítulo 3: Riqueza</h3>
+                <p>El dinero es un amplificador. Aprende a ser su comandante y no su esclavo. Entiende que tú eres el activo principal.</p>
+            </div>
+            <div class="card">
+                <h3>Capítulo 4: Presencia</h3>
+                <p>Domina el silencio estratégico. El poder real es una fuerza gravitacional que no necesita pedir atención.</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 120px; text-align: center;">Lo que vas a dominar</h2>
+        <ul class="feature-list">
+            <li><span><strong>Monopolio Personal:</strong> Deja de ser una mercancía intercambiable y haz que la competencia sea irrelevante.</span></li>
+            <li><span><strong>Autoimagen de Élite:</strong> Ajusta tu termostato mental para que el éxito sea el resultado inevitable de tu identidad.</span></li>
+            <li><span><strong>Silencio Estratégico:</strong> Aprende a ocupar espacio en la mente ajena sin decir una sola palabra.</span></li>
+            <li><span><strong>Quemar las Naves:</strong> Elimina mentalmente la opción del fracaso y comprométete con tu victoria absoluta.</span></li>
+        </ul>
+
+        <div class="final-buy-box" id="comprar">
+            <h2 class="titulo-alfa" style="font-size: 3rem;">¿ESTÁS LISTO?</h2>
+            <p style="font-size: 1.4rem; color: #fff; margin: 20px 0 40px;">El 1% no busca superar a la competencia; busca hacerla irrelevante.</p>
+            <a href="TU_LINK_HOTMART" class="cta-btn">Descargar Código Alfa VIP</a>
+            <p style="margin-top: 30px; font-size: 0.9rem; color: #555;">Acceso inmediato tras la compra. Garantía de 7 días.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CÓDIGO ALFA VIP - Albert S.</p>
+        <p>El 1% no compite; la competencia es para los que no tienen identidad.</p>
+    </footer>
 
 </body>
 </html>
