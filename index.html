@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <meta name="robots" content="index, follow">
     <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
     <meta name="description" content="Domina la psicología del 1%. Descarga el Manifiesto Alfa y deja de competir para empezar a liderar. Acceso exclusivo 2026.">
@@ -33,6 +34,7 @@
 
         h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px; color: var(--blanco-nitido); }
 
+        /* HERO */
         .hero {
             padding: 150px 20px;
             text-align: center;
@@ -65,6 +67,7 @@
             letter-spacing: 2px;
         }
 
+        /* BARRA DE BENEFICIOS */
         .trust-bar {
             display: flex;
             flex-wrap: wrap;
@@ -82,6 +85,7 @@
         .trust-item { display: flex; align-items: center; gap: 10px; }
         .trust-icon { color: var(--oro-real); font-size: 1.2rem; }
 
+        /* FORMULARIO DE CAPTACIÓN VIP */
         .optin-container {
             max-width: 500px;
             margin: 0 auto;
@@ -123,8 +127,9 @@
         }
 
         .cta-btn:hover { transform: scale(1.02); filter: brightness(1.2); }
-        .cta-btn:disabled { opacity: 0.5; cursor: wait; }
+        .cta-btn:disabled { opacity: 0.7; cursor: not-allowed; }
 
+        /* SECCIONES CONTENIDO */
         .section { padding: 100px 20px; max-width: 1000px; margin: 0 auto; }
         .quote-box {
             background: var(--gris-premium);
@@ -150,13 +155,11 @@
         
         <div class="optin-container">
             <p style="margin-bottom: 20px; font-weight: 700; letter-spacing: 1px;">DESCARGA EL MANIFIESTO GRATIS</p>
-            
-            <form id="alfa-form">
+            <form id="form-alfa">
                 <input type="text" name="name" placeholder="Tu Nombre Completo" required>
                 <input type="email" name="email" placeholder="Tu Email Privado" required>
-                <button type="submit" id="submit-btn" class="cta-btn">Acceder al Manifiesto</button>
+                <button type="submit" id="btn-submit" class="cta-btn">Acceder al Manifiesto</button>
             </form>
-            
             <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Tu privacidad es sagrada. Cero Spam.</p>
         </div>
     </header>
@@ -187,7 +190,7 @@
             <h2 class="titulo-alfa" style="font-size: 2.5rem;">¿QUIERES MÁS?</h2>
             <p>Accede a los Protocolos Completos de Implementación.</p>
             <br>
-            <a href="https://pay.hotmart.com/TU_ID_AQUI" class="cta-btn" style="max-width: 300px;">Comprar Código Alfa VIP</a>
+            <a href="TU_LINK_HOTMART" class="cta-btn" style="max-width: 300px;">Comprar Código Alfa VIP</a>
         </div>
     </main>
 
@@ -195,31 +198,27 @@
         <p>&copy; 2026 CÓDIGO ALFA VIP - A.S.</p>
     </footer>
 
-    <script src="https://unpkg.com/@formspree/ajax@1"></script>
-
     <script>
-        const formElement = document.getElementById('alfa-form');
-        const btn = document.getElementById('submit-btn');
+        const form = document.getElementById("form-alfa");
+        const btn = document.getElementById("btn-submit");
 
-        formElement.addEventListener('submit', function(ev) {
-            ev.preventDefault();
-            btn.innerHTML = "VALIDANDO ACCESO...";
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            btn.innerHTML = "VALIDANDO...";
             btn.disabled = true;
 
-            const data = new FormData(formElement);
+            const data = new FormData(form);
 
-            formspree.sendForm({
-                formId: 'mbdpqqpv',
-                data: data,
-                onSuccess: function() {
-                    // AQUÍ PONES EL LINK AL PDF O A TU PÁGINA DE GRACIAS/VENTA
-                    window.location.href = "https://pay.hotmart.com/TU_ID_AQUI"; 
-                },
-                onError: function() {
-                    btn.innerHTML = "ERROR - REINTENTAR";
-                    btn.disabled = false;
-                    alert("Hubo un error al procesar. Intenta de nuevo.");
-                }
+            fetch("https://formspree.io/f/mbdpqqpv", {
+                method: "POST",
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(() => {
+                // REDIRIGIR SIEMPRE
+                window.location.href = "TU_LINK_HOTMART_O_PDF";
+            }).catch(() => {
+                // REDIRIGIR INCLUSO SI HAY ERROR
+                window.location.href = "TU_LINK_HOTMART_O_PDF";
             });
         });
     </script>
