@@ -3,142 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="robots" content="index, follow">
     <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
-    <meta name="description" content="Domina la psicología del 1%. Descarga el Manifiesto Alfa y deja de competir para empezar a liderar. Acceso exclusivo 2026.">
-    
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --oro-celestial: #fcf6ba; 
-            --oro-real: #bf953f; 
-            --oro-profundo: #aa771c; 
+            --oro-gradiente: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 25%, #fcf6ba 50%, #bf953f 75%, #aa771c 100%);
+            --oro-real: #bf953f;
             --negro-absoluto: #000000;
             --gris-premium: #0a0a0a;
             --blanco-nitido: #ffffff;
             --texto-claro: #f0f0f0;
-            --oro-gradiente: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 25%, #fcf6ba 50%, #bf953f 75%, #aa771c 100%);
         }
 
         html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--negro-absoluto);
-            color: var(--texto-claro);
-            margin: 0;
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
+        body { font-family: 'Roboto', sans-serif; background-color: var(--negro-absoluto); color: var(--texto-claro); margin: 0; line-height: 1.7; -webkit-font-smoothing: antialiased; }
         h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px; color: var(--blanco-nitido); }
 
-        /* HERO */
-        .hero {
-            padding: 150px 20px;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            border-bottom: 3px solid transparent;
-            border-image: var(--oro-gradiente) 1;
-            box-shadow: 0 10px 50px rgba(191, 149, 63, 0.3);
-        }
+        .hero { padding: 150px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed; border-bottom: 3px solid transparent; border-image: var(--oro-gradiente) 1; box-shadow: 0 10px 50px rgba(191, 149, 63, 0.3); }
+        .titulo-alfa { font-size: clamp(3rem, 10vw, 6rem); font-weight: 700; background: var(--oro-gradiente); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.8)); line-height: 1.1; margin: 0; }
+        .subheadline { font-size: 1.5rem; max-width: 900px; margin: 25px auto 45px; color: var(--blanco-nitido); text-transform: uppercase; letter-spacing: 2px; }
 
-        .titulo-alfa {
-            font-size: clamp(3rem, 10vw, 6rem);
-            font-weight: 700;
-            background: var(--oro-gradiente);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.8));
-            line-height: 1.1;
-            margin: 0;
-        }
+        .optin-container { max-width: 500px; margin: 0 auto; background: rgba(255,255,255,0.05); padding: 30px; border: 1px solid rgba(191, 149, 63, 0.3); border-radius: 4px; backdrop-filter: blur(10px); }
+        input { width: 100%; padding: 15px; margin-bottom: 15px; background: #111; border: 1px solid #333; color: white; font-size: 1rem; box-sizing: border-box; }
+        input:focus { border-color: var(--oro-real); outline: none; }
 
-        .subheadline {
-            font-size: 1.5rem;
-            max-width: 900px;
-            margin: 25px auto 45px;
-            color: var(--blanco-nitido);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+        .cta-btn { display: inline-block; width: 100%; background: var(--oro-gradiente); color: #000; padding: 20px; text-decoration: none; font-weight: 700; font-family: 'Oswald', sans-serif; font-size: 1.2rem; transition: 0.4s; border: none; cursor: pointer; text-transform: uppercase; }
+        .cta-btn:hover { transform: scale(1.02); filter: brightness(1.2); }
 
-        /* BARRA DE CONFIANZA */
-        .trust-bar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 25px 20px;
-            background: var(--gris-premium);
-            border-bottom: 1px solid #1a1a1a;
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
+        .trust-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 25px 20px; background: var(--gris-premium); border-bottom: 1px solid #1a1a1a; font-family: 'Oswald', sans-serif; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; }
         .trust-item { display: flex; align-items: center; gap: 10px; }
         .trust-icon { color: var(--oro-real); font-size: 1.2rem; }
 
-        /* FORMULARIO DE CAPTACIÓN VIP */
-        .optin-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.05);
-            padding: 30px;
-            border: 1px solid rgba(191, 149, 63, 0.3);
-            border-radius: 4px;
-            backdrop-filter: blur(10px);
-        }
-
-        input {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            background: #111;
-            border: 1px solid #333;
-            color: white;
-            font-size: 1rem;
-            box-sizing: border-box;
-        }
-
-        input:focus { border-color: var(--oro-real); outline: none; }
-
-        .cta-btn {
-            display: inline-block;
-            width: 100%;
-            background: var(--oro-gradiente);
-            color: #000;
-            padding: 20px;
-            text-decoration: none;
-            font-weight: 700;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.2rem;
-            transition: 0.4s;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        .cta-btn:hover { transform: scale(1.02); filter: brightness(1.2); }
-
-        /* SECCIONES CONTENIDO */
         .section { padding: 100px 20px; max-width: 1000px; margin: 0 auto; }
-        .quote-box {
-            background: var(--gris-premium);
-            padding: 50px;
-            border-left: 6px solid var(--oro-real);
-            font-style: italic; font-size: 1.6rem;
-            margin-bottom: 80px;
-            box-shadow: 15px 15px 50px rgba(0,0,0,0.8);
-        }
-
+        .quote-box { background: var(--gris-premium); padding: 50px; border-left: 6px solid var(--oro-real); font-style: italic; font-size: 1.6rem; margin-bottom: 80px; box-shadow: 15px 15px 50px rgba(0,0,0,0.8); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         .card { background: #050505; padding: 45px; border: 1px solid #1a1a1a; transition: 0.4s; }
         .card:hover { border-color: var(--oro-real); transform: translateY(-10px); }
@@ -155,16 +53,11 @@
         <div class="optin-container">
             <p style="margin-bottom: 20px; font-weight: 700; letter-spacing: 1px;">DESCARGA EL MANIFIESTO GRATIS</p>
             
-            <form action="https://formspree.io/f/mbdpqqpv" method="POST" id="alfa-form">
-                
-                <input type="hidden" name="_next" value="https://codigoalfa.vip/gracias">
-                
-                <input type="text" name="_gotcha" style="display:none">
-
-                <input type="text" name="Nombre" placeholder="Tu Nombre Completo" required>
-                <input type="email" name="Email" placeholder="Tu Email Privado" required>
-                
-                <button type="submit" class="cta-btn" id="submit-btn">Acceder al Manifiesto</button>
+            <form id="alfa-form" action="https://formspree.io/f/mbdpqqpv" method="POST">
+                <input type="text" name="name" placeholder="Tu Nombre Completo" required>
+                <input type="email" name="email" placeholder="Tu Email Privado" required>
+                <button type="submit" id="submit-btn" class="cta-btn">Acceder al Manifiesto</button>
+                <p id="form-status" style="margin-top:15px; display:none; font-weight:bold; color:var(--oro-real)"></p>
             </form>
             
             <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Tu privacidad es sagrada. Cero Spam.</p>
@@ -179,25 +72,17 @@
 
     <main class="section">
         <div class="quote-box">
-            "Al hombre moderno se le ha vendido una mentira: que debe disculparse por su ambición... La mayoría vive en silencio, compitiendo por las sobras."
+            "Al hombre moderno se le ha vendido una mentira: que debe disculparse por su ambición... La mayoría vive en silencio."
         </div>
-
         <div class="grid">
             <div class="card">
                 <h3 style="color:var(--oro-real)">El Despertar</h3>
-                <p>Quema el mapa que te dieron al nacer. Pasa de ser un "Participante" a ser el "Arquitecto".</p>
+                <p>Pasa de ser un "Participante" a ser el "Arquitecto".</p>
             </div>
             <div class="card">
                 <h3 style="color:var(--oro-real)">Disciplina</h3>
-                <p>La motivación es una mentira. Necesitas Ingeniería del Comportamiento y Modo Ofensivo.</p>
+                <p>La motivación es una mentira. Necesitas Ingeniería del Comportamiento.</p>
             </div>
-        </div>
-
-        <div id="comprar" style="text-align: center; margin-top: 100px; padding: 60px; border: 1px solid var(--oro-real);">
-            <h2 class="titulo-alfa" style="font-size: 2.5rem;">¿QUIERES MÁS?</h2>
-            <p>Accede a los Protocolos Completos de Implementación.</p>
-            <br>
-            <a href="TU_LINK_HOTMART" class="cta-btn" style="max-width: 300px;">Comprar Código Alfa VIP</a>
         </div>
     </main>
 
@@ -206,16 +91,44 @@
     </footer>
 
     <script>
-        // Mejora UX: Cambia el texto del botón al enviar
-        const form = document.getElementById('alfa-form');
-        const btn = document.getElementById('submit-btn');
+        const form = document.getElementById("alfa-form");
+        const button = document.getElementById("submit-btn");
+        const status = document.getElementById("form-status");
 
-        form.onsubmit = function() {
-            btn.innerHTML = "CARGANDO ACCESO...";
-            btn.style.opacity = "0.7";
-            btn.style.cursor = "not-allowed";
-        };
+        async function handleSubmit(event) {
+          event.preventDefault();
+          button.innerHTML = "VALIDANDO ACCESO...";
+          button.disabled = true;
+          
+          const data = new FormData(event.target);
+          
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              // AQUÍ PONES TU LINK DE DESTINO
+              window.location.href = "https://TU_LINK_DE_HOTMART_O_PDF.com";
+            } else {
+              response.json().then(data => {
+                status.style.display = "block";
+                status.innerHTML = "Error. Intenta de nuevo.";
+                button.disabled = false;
+                button.innerHTML = "Acceder al Manifiesto";
+              })
+            }
+          }).catch(error => {
+            status.style.display = "block";
+            status.innerHTML = "Hubo un problema de conexión.";
+            button.disabled = false;
+            button.innerHTML = "Acceder al Manifiesto";
+          });
+        }
+        
+        form.addEventListener("submit", handleSubmit);
     </script>
-
 </body>
 </html>
