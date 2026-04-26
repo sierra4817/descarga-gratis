@@ -19,6 +19,10 @@
         .hero { padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop'); background-size: cover; border-bottom: 3px solid var(--oro-real); }
         .titulo-alfa { font-size: clamp(2.5rem, 8vw, 5rem); background: var(--oro-gradiente); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; }
         
+        /* MOCKUP STYLE */
+        .hero-mockup { margin: 40px auto; max-width: 450px; }
+        .hero-mockup img { width: 100%; filter: drop-shadow(0 20px 40px rgba(191, 149, 63, 0.3)); border-radius: 8px; }
+
         .optin-container { max-width: 450px; margin: 30px auto; background: rgba(255,255,255,0.05); padding: 30px; border: 1px solid var(--oro-real); backdrop-filter: blur(10px); }
         input { width: 100%; padding: 15px; margin-bottom: 15px; background: #111; border: 1px solid #333; color: white; box-sizing: border-box; }
         
@@ -42,6 +46,15 @@
 
         .section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
         .card { background: #050505; padding: 30px; border: 1px solid #1a1a1a; margin-bottom: 20px; }
+
+        /* PRODUCT CARDS */
+        .product-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
+        .product-item { background: #0a0a0a; border-left: 3px solid var(--oro-real); padding: 20px; text-align: left; }
+        .product-item h4 { margin: 0; color: var(--oro-real); font-family: 'Oswald', sans-serif; }
+
+        /* RESEÑAS */
+        .review { border-bottom: 1px solid #1a1a1a; padding: 30px 0; font-style: italic; }
+        .stars { color: var(--oro-real); margin-bottom: 10px; font-size: 1.2rem; }
         
         #comprar { 
             margin-top: 40px; 
@@ -54,7 +67,6 @@
         }
 
         .btn-wrapper { width: 100%; display: flex; justify-content: center; }
-
         footer { padding: 40px; color: #555; font-size: 0.8rem; }
     </style>
 </head>
@@ -63,6 +75,11 @@
     <header class="hero">
         <h1 class="titulo-alfa">CÓDIGO ALFA VIP</h1>
         <p>EL MANIFIESTO DEL 1%: NO COMPITAS, LIDERA</p>
+        
+        <div class="hero-mockup">
+            <img src="92A77E8D-8FCC-443D-B6FA-72F166413416.png" alt="Código Alfa VIP Mockup">
+        </div>
+
         <div class="optin-container">
             <p style="font-weight:700;">DESCARGA EL MANIFIESTO GRATIS</p>
             <form id="form-alfa">
@@ -79,6 +96,34 @@
         <div class="card">
             <h3 style="color:var(--oro-real)">El Despertar</h3>
             <p>Deja de ser un participante en la vida de otros y conviértete en el arquitecto de tu propio destino.</p>
+        </div>
+
+        <h2 style="margin-top: 60px;">Contenido del Protocolo</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <h4>🛡️ Leyes del Dinero Antiguas</h4>
+                <p>50 reglas inmutables que las familias de élite usan para preservar riqueza generacional.</p>
+            </div>
+            <div class="product-item">
+                <h4>🎯 Rastreador de Flujo de Caja</h4>
+                <p>La herramienta táctica definitiva para identificar y detener el sangrado de capital.</p>
+            </div>
+            <div class="product-item">
+                <h4>🦅 Mentalidad de Soberanía</h4>
+                <p>Protocolos de psicología de alto rendimiento para operar bajo presión extrema.</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 60px;">Resultados de la Comunidad</h2>
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Este manifiesto cambió mi visión sobre los activos. Es la estructura que nadie te enseña en la universidad."</p>
+            <span style="color:var(--oro-real); font-weight: bold;">- Javier F.</span>
+        </div>
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"El rastreador de flujo por sí solo vale 10 veces el precio. La claridad mental que obtienes es absoluta."</p>
+            <span style="color:var(--oro-real); font-weight: bold;">- Sofía G.</span>
         </div>
 
         <div id="comprar">
@@ -103,7 +148,6 @@
             btn.innerHTML = "PROCESANDO...";
             btn.disabled = true;
 
-            // LINK DE DRIVE ACTUALIZADO CON PERMISOS PÚBLICOS
             const ebookLink = "https://drive.google.com/file/d/1nUlSOzEGNRx9r4S36GyrZRUjasrnn8vK/view?usp=sharing";
 
             fetch("https://formspree.io/f/mbdpqqpv", {
@@ -114,7 +158,6 @@
                 window.location.href = ebookLink;
             });
 
-            // Redirección de respaldo por si el fetch tarda demasiado
             setTimeout(() => { window.location.href = ebookLink; }, 4000);
         });
     </script>
