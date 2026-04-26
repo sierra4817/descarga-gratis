@@ -41,7 +41,6 @@
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
         }
         
-        /* SECCIÓN DEL MOCKUP CORREGIDA */
         .hero-mockup { margin: 40px auto; max-width: 450px; }
         .hero-mockup img { 
             width: 100%; 
@@ -69,11 +68,15 @@
             border-radius: 4px;
         }
         
+        /* BOTÓN CORREGIDO: ORO LÍQUIDO REALISTA */
         .cta-btn { 
-            display: inline-block; 
+            display: flex; /* Cambiado a flex para centrar texto perfectamente */
+            align-items: center;
+            justify-content: center;
             width: 100%; 
             max-width: 320px; 
-            background: var(--oro-gradiente); 
+            margin: 0 auto; /* Asegura centrado en el contenedor */
+            background: linear-gradient(180deg, #fef082 0%, #e1b333 45%, #825d02 100%);
             color: #000 !important; 
             padding: 20px; 
             text-decoration: none; 
@@ -83,9 +86,10 @@
             cursor: pointer; 
             text-transform: uppercase;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6), inset 0 1px 1px rgba(255,255,255,0.8);
+            border-radius: 4px;
         }
-        .cta-btn:hover { transform: scale(1.03); filter: brightness(1.1); }
+        .cta-btn:hover { transform: scale(1.03); filter: brightness(1.1); box-shadow: 0 6px 20px rgba(191, 149, 63, 0.4); }
 
         .section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
         .card { background: #050505; padding: 30px; border: 1px solid #1a1a1a; margin-bottom: 20px; }
