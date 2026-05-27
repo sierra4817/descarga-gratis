@@ -174,10 +174,9 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: 1rem; /* Reducido de var(--spacing-xl) que equivale a 5rem */
   animation: fadeIn 1.2s ease-out;
 }
-
 .logo-wrapper {
   margin-bottom: var(--spacing-xs);
   display: flex;
@@ -214,7 +213,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
   animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -419,24 +418,20 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: var(--spacing-xl);
-  padding-top: var(--spacing-xl);
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
   border-top: 1px solid rgba(191, 149, 63, 0.08);
   position: relative;
 }
 
 /* Reveal transition classes (managed by script) */
 .conversion-section.initially-hidden {
-  opacity: 0.08;
-  filter: blur(4px);
-  pointer-events: none;
-  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: none;
 }
 
 .conversion-section.revealed {
-  opacity: 1;
-  filter: blur(0);
-  pointer-events: auto;
+  display: flex;
+  animation: fadeIn 1.2s ease-out forwards;
 }
 
 .transition-tagline {
@@ -763,3 +758,4 @@ footer {
   border: none !important;
   background: transparent !important;
 }
+
