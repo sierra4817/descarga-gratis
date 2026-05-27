@@ -1,380 +1,49 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Código Alfa | Éxito y Mente — Psicología del 1%, Liderazgo y Poder. El 1% no compite, domina el juego. Únete a la comunidad." />
-  <meta name="keywords" content="código alfa, éxito, mente, liderazgo, poder, disciplina, mentalidad alfa, psicología, desarrollo personal" />
-  <meta name="author" content="Código Alfa" />
-  <meta property="og:title" content="Código Alfa | Éxito y Mente" />
-  <meta property="og:description" content="Psicología del 1% | Liderazgo | Poder. El 1% no compite, domina el juego." />
-  <meta property="og:type" content="website" />
-  <title>Código Alfa | Éxito y Mente — Psicología del 1%</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL CAPITAL INVISIBLE | Manifiesto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #bf953f; --bg: #000000; }
+        body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; text-align: center; padding: 80px 20px; line-height: 1.6; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; letter-spacing: 2px; }
+        h2 { font-family: 'Cormorant Garamond', serif; color: var(--gold); margin-top: 40px; }
+        p { color: #ccc; max-width: 600px; margin: 20px auto; font-size: 1.1rem; }
+        
+        #lead-form { border: 1px solid #333; padding: 40px; background: #0a0a0a; max-width: 500px; margin: 40px auto; }
+        input { width: 100%; padding: 15px; background: #000; border: 1px solid var(--gold); color: #fff; margin-bottom: 20px; text-align: center; box-sizing: border-box; }
+        
+        .btn-gold { display: inline-block; padding: 15px 40px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; background: transparent; transition: 0.3s; width: 100%; }
+        .btn-gold:hover { background: var(--gold); color: #000; }
+        
+        #upsell-section { display: none; margin-top: 60px; border-top: 1px solid #333; padding-top: 40px; }
+    </style>
 </head>
 <body>
 
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="loader-ring"></div>
-  </div>
+    <h1>El Manifiesto de la Élite</h1>
+    <p>El dinero que se ve es el dinero que se devalúa. El verdadero poder opera en las sombras.</p>
+    <p>La mayoría de las personas juegan un juego financiero cuyas reglas fueron escritas para que pierdan. Existe un capital que no se ve. Un sistema de soberanía que no tributa de la forma en que te enseñaron.</p>
 
-  <!-- Particles -->
-  <div class="particles" id="particles"></div>
-
-  <!-- Navbar -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="#hero" class="nav-brand">
-        <div class="nav-brand-icon">CΑ</div>
-        <div class="nav-brand-text">Código <em>Alfa</em></div>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about" onclick="closeMenu()">Sobre Mí</a></li>
-        <li><a href="#pillars" onclick="closeMenu()">Pilares</a></li>
-        <li><a href="#philosophy" onclick="closeMenu()">Filosofía</a></li>
-        <li><a href="#content" onclick="closeMenu()">Contenido</a></li>
-        <li><a href="#cta" class="nav-cta" onclick="closeMenu()">Únete</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
+    <div id="lead-form">
+        <p>Obtén el Capítulo 1 del Manifiesto y la Guía de inicio gratuito</p>
+        <input type="email" placeholder="Introduce tu correo">
+        <button class="btn-gold" onclick="showUpsell()">Obtener Capítulo 1 y Guía</button>
     </div>
-  </nav>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-bg"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="dot"></span>
-          Psicología del 1%
-        </div>
-        <h1 class="hero-title">
-          <span class="line">El 1% no compite,</span>
-          <span class="line"><span class="highlight">domina el juego.</span></span>
-        </h1>
-        <p class="hero-subtitle">
-          Despierta la mentalidad que te separa del 99%. Liderazgo, disciplina y poder mental para construir la vida que mereces.
-        </p>
-        <div class="hero-buttons">
-          <a href="https://www.tiktok.com/@codigo.alfa.vip" target="_blank" class="btn btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13.1a8.16 8.16 0 005.58 2.19V11.8a4.85 4.85 0 01-3.43-1.56V6.69h3.43z"/></svg>
-            Seguir en TikTok
-          </a>
-          <a href="#about" class="btn btn-outline">
-            Descubrir más
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-value" data-target="4764">0</div>
-            <div class="hero-stat-label">Seguidores</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-value" data-target="39800">0</div>
-            <div class="hero-stat-label">Me gusta</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-value" data-target="150">0</div>
-            <div class="hero-stat-label">Vídeos</div>
-          </div>
-        </div>
-      </div>
+    <div id="upsell-section">
+        <p style="font-style: italic; color: #888;">"El conocimiento gratuito te dará una ventaja. El sistema completo te dará la soberanía."</p>
+        <h2>Sistema Definitivo: Comprar, Pedir Prestado, Morir</h2>
+        <a href="https://payhip.com/CapitalInvisible" class="btn-gold" style="max-width: 400px; margin-top: 20px;">ACCEDER AL SISTEMA</a>
     </div>
-  </section>
 
-  <!-- About -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-image-wrapper reveal">
-        <div class="about-image">
-          <img src="assets/img/about.png" alt="Código Alfa - Mentalidad de Poder" loading="lazy" />
-        </div>
-        <div class="about-accent-box">
-          <div class="about-accent-icon">🏆</div>
-          <div class="about-accent-text">
-            <strong>Top 1%</strong>
-            <span>Mentalidad de Élite</span>
-          </div>
-        </div>
-      </div>
-      <div class="about-text">
-        <span class="section-label reveal">Sobre Mí</span>
-        <h2 class="section-title reveal reveal-delay-1">
-          Construyendo mentes <span>inquebrantables</span>
-        </h2>
-        <p class="section-desc reveal reveal-delay-2">
-          Soy el creador de <strong>Código Alfa</strong>, una comunidad dedicada a forjar la mentalidad del 1%. A través de contenido sobre psicología, liderazgo y poder, ayudo a personas a despertar su potencial oculto y dominar cada aspecto de su vida.
-        </p>
-        <br/>
-        <p class="section-desc reveal reveal-delay-3">
-          Mi misión es clara: <em>transformar mentes débiles en mentes de acero</em>. Cada vídeo, cada mensaje, cada palabra está diseñada para reprogramar tu mente y llevarte al siguiente nivel.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pillars -->
-  <section class="pillars" id="pillars">
-    <div class="container">
-      <div class="pillars-header">
-        <span class="section-label reveal">Los 3 Pilares</span>
-        <h2 class="section-title reveal reveal-delay-1">
-          Domina tu mente, <span>domina tu destino</span>
-        </h2>
-        <p class="section-desc reveal reveal-delay-2">
-          Los tres pilares fundamentales que separan al 1% del resto. Internaliza estos principios y transforma tu realidad.
-        </p>
-      </div>
-      <div class="pillars-grid">
-        <div class="pillar-card reveal">
-          <span class="pillar-number">01</span>
-          <div class="pillar-icon">🧠</div>
-          <h3 class="pillar-title">Psicología del Poder</h3>
-          <p class="pillar-desc">Comprende las leyes invisibles que rigen el comportamiento humano. Quien domina la psicología, domina el juego. Aprende a leer a las personas y a influir en cualquier situación.</p>
-        </div>
-        <div class="pillar-card reveal reveal-delay-1">
-          <span class="pillar-number">02</span>
-          <div class="pillar-icon">⚔️</div>
-          <h3 class="pillar-title">Disciplina de Acero</h3>
-          <p class="pillar-desc">La motivación es temporal, la disciplina es permanente. Construye hábitos inquebrantables, elimina la debilidad y forja un carácter que no se doblega ante nada ni nadie.</p>
-        </div>
-        <div class="pillar-card reveal reveal-delay-2">
-          <span class="pillar-number">03</span>
-          <div class="pillar-icon">👑</div>
-          <h3 class="pillar-title">Liderazgo Alfa</h3>
-          <p class="pillar-desc">Un líder no nace, se forja. Desarrolla la presencia, la autoridad y el carisma que inspira respeto. Aprende a liderar con visión, propósito y una mentalidad imparable.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Philosophy -->
-  <section class="philosophy" id="philosophy">
-    <div class="philosophy-bg"></div>
-    <div class="container">
-      <span class="section-label reveal">Filosofía</span>
-      <blockquote class="philosophy-quote reveal reveal-delay-1">
-        "El hombre que <span>conquista a otros</span> es fuerte. El hombre que <span>se conquista a sí mismo</span> es poderoso."
-      </blockquote>
-      <p class="philosophy-author reveal reveal-delay-2">— Código Alfa</p>
-    </div>
-  </section>
-
-  <!-- Content -->
-  <section class="content-section" id="content">
-    <div class="container">
-      <div class="content-header">
-        <div>
-          <span class="section-label reveal">Contenido</span>
-          <h2 class="section-title reveal reveal-delay-1">
-            Vídeos que <span>transforman</span>
-          </h2>
-        </div>
-        <a href="https://www.tiktok.com/@codigo.alfa.vip" target="_blank" class="btn btn-outline reveal">
-          Ver todos
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-      <div class="content-grid">
-        <div class="content-card reveal">
-          <div class="content-card-bg" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
-            <div style="font-size: 3rem; text-align: center; line-height: 1.2; font-family: var(--font-display); font-weight: 900; color: rgba(255,255,255,0.9); padding: 20px;">Regla de Poder 24H</div>
-          </div>
-          <div class="content-card-overlay">
-            <div class="content-card-title">Regla de Poder 24H</div>
-            <div class="content-card-views">▶ 1,186 visualizaciones</div>
-          </div>
-          <div class="content-card-play">
-            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-        </div>
-        <div class="content-card reveal reveal-delay-1">
-          <div class="content-card-bg" style="background: linear-gradient(135deg, #0f3460, #16213e);">
-            <div style="font-size: 3rem; text-align: center; line-height: 1.2; font-family: var(--font-display); font-weight: 900; color: rgba(255,255,255,0.9); padding: 20px;">Mentalidad de Poder</div>
-          </div>
-          <div class="content-card-overlay">
-            <div class="content-card-title">Mentalidad de Poder</div>
-            <div class="content-card-views">▶ 1,036 visualizaciones</div>
-          </div>
-          <div class="content-card-play">
-            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-        </div>
-        <div class="content-card reveal reveal-delay-2">
-          <div class="content-card-bg" style="background: linear-gradient(135deg, #1a1a2e, #0a3d62);">
-            <div style="font-size: 3rem; text-align: center; line-height: 1.2; font-family: var(--font-display); font-weight: 900; color: rgba(255,255,255,0.9); padding: 20px;">Tu Destino</div>
-          </div>
-          <div class="content-card-overlay">
-            <div class="content-card-title">Tu Destino</div>
-            <div class="content-card-views">▶ 1,014 visualizaciones</div>
-          </div>
-          <div class="content-card-play">
-            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-        </div>
-        <div class="content-card reveal reveal-delay-3">
-          <div class="content-card-bg" style="background: linear-gradient(135deg, #16213e, #1a1a2e);">
-            <div style="font-size: 3rem; text-align: center; line-height: 1.2; font-family: var(--font-display); font-weight: 900; color: rgba(255,255,255,0.9); padding: 20px;">Silencio Letal</div>
-          </div>
-          <div class="content-card-overlay">
-            <div class="content-card-title">Silencio Letal</div>
-            <div class="content-card-views">▶ 531 visualizaciones</div>
-          </div>
-          <div class="content-card-play">
-            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section" id="cta">
-    <div class="container">
-      <div class="cta-box reveal">
-        <span class="section-label">Comunidad Privada</span>
-        <h2 class="section-title">
-          ¿Estás listo para <span>despertar</span>?
-        </h2>
-        <p class="section-desc">
-          Únete a la comunidad de Código Alfa. Accede a contenido exclusivo, mentoría y conecta con personas que, como tú, se niegan a ser del montón.
-        </p>
-        <div class="cta-buttons">
-          <a href="https://www.tiktok.com/@codigo.alfa.vip" target="_blank" class="btn btn-tiktok">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13.1a8.16 8.16 0 005.58 2.19V11.8a4.85 4.85 0 01-3.43-1.56V6.69h3.43z"/></svg>
-            Seguir en TikTok
-          </a>
-          <a href="#hero" class="btn btn-primary">
-            🚀 Explorar Contenido
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-copy">
-        © 2026 <a href="#">Código Alfa</a> | Éxito y Mente. Todos los derechos reservados.
-      </div>
-      <div class="footer-socials">
-        <a href="https://www.tiktok.com/@codigo.alfa.vip" target="_blank" class="footer-social" aria-label="TikTok">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13.1a8.16 8.16 0 005.58 2.19V11.8a4.85 4.85 0 01-3.43-1.56V6.69h3.43z"/></svg>
-        </a>
-        <a href="#" class="footer-social" aria-label="Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="#" class="footer-social" aria-label="YouTube">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.9 31.9 0 000 12a31.9 31.9 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.4-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // === Preloader ===
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('preloader').classList.add('hidden');
-      }, 800);
-    });
-
-    // === Particles ===
-    (function createParticles() {
-      const container = document.getElementById('particles');
-      for (let i = 0; i < 30; i++) {
-        const p = document.createElement('div');
-        p.classList.add('particle');
-        p.style.left = Math.random() * 100 + '%';
-        p.style.animationDuration = (Math.random() * 15 + 10) + 's';
-        p.style.animationDelay = (Math.random() * 10) + 's';
-        p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
-        container.appendChild(p);
-      }
-    })();
-
-    // === Navbar scroll ===
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    // === Mobile menu ===
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('active');
-      navLinks.classList.toggle('open');
-    });
-    function closeMenu() {
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('open');
-    }
-
-    // === Counter Animation ===
-    function animateCounters() {
-      document.querySelectorAll('[data-target]').forEach(el => {
-        const target = parseInt(el.dataset.target);
-        const duration = 2000;
-        const start = performance.now();
-        function update(now) {
-          const elapsed = now - start;
-          const progress = Math.min(elapsed / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          const current = Math.floor(eased * target);
-          if (target >= 1000) {
-            el.textContent = (current / 1000).toFixed(1).replace('.0', '') + 'K+';
-          } else {
-            el.textContent = current.toLocaleString('es-ES') + '+';
-          }
-          if (progress < 1) requestAnimationFrame(update);
+    <script>
+        function showUpsell() {
+            document.getElementById('lead-form').innerHTML = '<p style="color: var(--gold);">Revisa tu bandeja de entrada. Acceso desbloqueado.</p><a href="#" class="btn-gold">DESCARGAR PDF AHORA</a>';
+            document.getElementById('upsell-section').style.display = 'block';
         }
-        requestAnimationFrame(update);
-      });
-    }
-
-    // === Scroll Reveal ===
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          if (entry.target.closest('.hero-stats')) {
-            animateCounters();
-          }
-        }
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Trigger counter on hero stats visibility
-    const heroStats = document.querySelector('.hero-stats');
-    if (heroStats) {
-      const statsObs = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          animateCounters();
-          statsObs.disconnect();
-        }
-      }, { threshold: 0.5 });
-      statsObs.observe(heroStats);
-    }
-
-    // === Smooth scroll for anchor links ===
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-  </script>
+    </script>
 </body>
 </html>
