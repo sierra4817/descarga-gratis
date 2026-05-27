@@ -1,49 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EL CAPITAL INVISIBLE | Manifiesto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        :root { --gold: #bf953f; --bg: #000000; }
-        body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; text-align: center; padding: 80px 20px; line-height: 1.6; }
-        h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; letter-spacing: 2px; }
-        h2 { font-family: 'Cormorant Garamond', serif; color: var(--gold); margin-top: 40px; }
-        p { color: #ccc; max-width: 600px; margin: 20px auto; font-size: 1.1rem; }
-        
-        #lead-form { border: 1px solid #333; padding: 40px; background: #0a0a0a; max-width: 500px; margin: 40px auto; }
-        input { width: 100%; padding: 15px; background: #000; border: 1px solid var(--gold); color: #fff; margin-bottom: 20px; text-align: center; box-sizing: border-box; }
-        
-        .btn-gold { display: inline-block; padding: 15px 40px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; background: transparent; transition: 0.3s; width: 100%; }
-        .btn-gold:hover { background: var(--gold); color: #000; }
-        
-        #upsell-section { display: none; margin-top: 60px; border-top: 1px solid #333; padding-top: 40px; }
-    </style>
-</head>
-<body>
-
+<section id="hero">
     <h1>El Manifiesto de la Élite</h1>
     <p>El dinero que se ve es el dinero que se devalúa. El verdadero poder opera en las sombras.</p>
     <p>La mayoría de las personas juegan un juego financiero cuyas reglas fueron escritas para que pierdan. Existe un capital que no se ve. Un sistema de soberanía que no tributa de la forma en que te enseñaron.</p>
+</section>
 
-    <div id="lead-form">
-        <p>Obtén el Capítulo 1 del Manifiesto y la Guía de inicio gratuito</p>
-        <input type="email" placeholder="Introduce tu correo">
-        <button class="btn-gold" onclick="showUpsell()">Obtener Capítulo 1 y Guía</button>
-    </div>
+<div id="lead-form">
+    <p>Obtén el Capítulo 1 del Manifiesto y la Guía de inicio gratuito.</p>
+    <input type="email" id="user-email" placeholder="Introduce tu correo">
+    <button class="btn-gold" onclick="showUpsell()">Obtener Capítulo 1 y Guía</button>
+</div>
 
-    <div id="upsell-section">
-        <p style="font-style: italic; color: #888;">"El conocimiento gratuito te dará una ventaja. El sistema completo te dará la soberanía."</p>
-        <h2>Sistema Definitivo: Comprar, Pedir Prestado, Morir</h2>
-        <a href="https://payhip.com/CapitalInvisible" class="btn-gold" style="max-width: 400px; margin-top: 20px;">ACCEDER AL SISTEMA</a>
-    </div>
-
-    <script>
-        function showUpsell() {
-            document.getElementById('lead-form').innerHTML = '<p style="color: var(--gold);">Revisa tu bandeja de entrada. Acceso desbloqueado.</p><a href="#" class="btn-gold">DESCARGAR PDF AHORA</a>';
-            document.getElementById('upsell-section').style.display = 'block';
-        }
-    </script>
-</body>
-</html>
+<div id="upsell-section">
+    <p style="font-style: italic; color: #888;">"El conocimiento gratuito te dará una ventaja. El sistema completo te dará la soberanía."</p>
+    <h2 style="color: var(--gold);">Sistema Definitivo: Comprar, Pedir Prestado, Morir</h2>
+    <a href="https://payhip.com/CapitalInvisible" class="btn-gold">ACCEDER AL SISTEMA COMPLETO</a>
+</div>
